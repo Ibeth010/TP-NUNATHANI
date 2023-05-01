@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Especialidad </title>
+
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div style="text-align: center;">
+      <h1>Lista de Especialidades</h1>
+      <link href="https://fonts.googleapis.com/css2?family=Bellota&display=swap" rel="stylesheet">
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <mat-form-field style="flex: 1; margin-right: 16px;">
+        <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
+      </mat-form-field>
+
+      <button mat-raised-button color="warn" routerLink="/especialidad/especialidadinsertar">Nuevo</button>
+    </div>
+
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="codigo" >
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Id </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.id}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="tipo">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Tipo de Especialidad </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.tipoEspecialidad}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Descripción </th>
+        <td mat-cell *matCellDef="let element"> {{element.descripcionEspecialidad}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="centro">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Centro de estudio </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.centroEspecialidad}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="ceditar">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;" > Acciones</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center; height: 100px; vertical-align: middle;">
+          <div style="display: flex;">
+            <button mat-icon-button class="custom-button" [routerLink]= "['edicion', element.id]" style="margin-right: 5px;">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button class="custom-button" (click)="confirmar(element.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+    </table>
+    <br>
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5]"></mat-paginator>
+  </div>
+
+</body>
+
+</html>
