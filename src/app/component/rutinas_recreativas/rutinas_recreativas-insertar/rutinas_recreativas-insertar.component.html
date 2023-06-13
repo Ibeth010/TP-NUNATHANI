@@ -9,9 +9,10 @@
   <body>
     <form [formGroup]="form" (submit)="aceptar()">
       <h1 class="mensaje">Ingrese los datos</h1>
+
       <mat-form-field class="example-full-width">
         <mat-label>Código</mat-label>
-        <input required matInput placeholder="No" formControlName="id" />
+        <input required matInput placeholder="No" formControlName="id" readonly/>
       </mat-form-field>
       <br />
       <mat-form-field class="example-full-width">

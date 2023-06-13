@@ -15,6 +15,8 @@ import { DisponibilidadComponent } from './component/disponibilidad/disponibilid
 
 import { Rutinas_recreativasInsertarComponent } from './component/rutinas_recreativas/rutinas_recreativas-insertar/rutinas_recreativas-insertar.component';
 import { Rutinas_recreativasComponent } from './component/rutinas_recreativas/rutinas_recreativas.component';
+import { TratamientoComponent } from './component/tratamiento/tratamiento.component';
+import { TratamientoInsertarComponent } from './component/tratamiento/tratamiento-insertar/tratamiento-insertar.component';
 
 const routes: Routes = [
   {
@@ -61,6 +63,17 @@ const routes: Routes = [
       {path: 'edicion/:id', component: Rutinas_recreativasInsertarComponent},
     ],
   },
+
+  {
+    path: 'tratamientos',
+    component: TratamientoComponent
+    ,
+    children: [
+      {path: 'tratamientosinsertar', component: TratamientoInsertarComponent},
+      {path: 'edicion/:id', component: TratamientoInsertarComponent},
+    ],
+  },
+  
 ];
 
 @NgModule({
