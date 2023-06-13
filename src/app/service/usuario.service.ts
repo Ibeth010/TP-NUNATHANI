@@ -32,7 +32,7 @@ export class UsuarioService {
     return this.http.get<Usuario>(`${this.url}/${id}`);
   }
   update(U: Usuario) {
-    return this.http.put(this.url + '/' + U.id, U);
+    return this.http.put(this.url + '/' + U.idusuario, U);
   }
   eliminar(id: number) {
 

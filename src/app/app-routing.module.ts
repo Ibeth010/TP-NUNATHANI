@@ -17,6 +17,10 @@ import { Rutinas_recreativasInsertarComponent } from './component/rutinas_recrea
 import { Rutinas_recreativasComponent } from './component/rutinas_recreativas/rutinas_recreativas.component';
 import { TratamientoComponent } from './component/tratamiento/tratamiento.component';
 import { TratamientoInsertarComponent } from './component/tratamiento/tratamiento-insertar/tratamiento-insertar.component';
+import { PacienteComponent } from './component/paciente/paciente.component';
+import { PacienteInsertarComponent } from './component/paciente/paciente-insertar/paciente-insertar.component';
+import { TestComponent } from './component/test/test.component';
+import { TestInsertarComponent } from './component/test/test-insertar/test-insertar.component';
 
 const routes: Routes = [
   {
@@ -44,7 +48,23 @@ const routes: Routes = [
       {path: 'usuario-insertar', component: UsuarioInsertarComponent},
       {path: 'edicion/:id', component: UsuarioInsertarComponent},
     ],
-  },  
+  }, 
+  {
+    path:'paciente',
+    component:PacienteComponent,
+    children: [
+      {path: 'paciente-insertar', component: PacienteInsertarComponent},
+      {path: 'edicion/:id', component: PacienteInsertarComponent},
+    ],
+  }, 
+  {
+    path:'test',
+    component:TestComponent,
+    children: [
+      {path: 'test-insertar', component: TestInsertarComponent},
+      {path: 'edicion/:id', component: TestInsertarComponent},
+    ],
+  },
  {
     path: 'disponibilidad',
     component: DisponibilidadComponent

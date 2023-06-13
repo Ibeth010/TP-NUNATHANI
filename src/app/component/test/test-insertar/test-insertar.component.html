@@ -1,0 +1,47 @@
+<div>
+    <div class="container">
+      <h1>Test</h1>
+      <form [formGroup]="form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Id</mat-label>
+          <input matInput placeholder="Id" formControlName="idtest">
+        </mat-form-field>
+  
+        <br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="fechatest">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+  
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Paciente</mat-label>
+          <mat-select formControlName="paciente" [(value)]="idpacienteseleccionado" required>
+            <mat-option *ngFor="let p of lista" [value]="p.idpaciente">
+              {{p.correopaciente}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Pregunta</mat-label>
+          <input matInput required placeholder="pregunta" formControlName="pregunta">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Opciones</mat-label>
+          <input matInput required placeholder="opciones" formControlName="opciones">
+        </mat-form-field>
+  
+        <br>
+        <button mat-raised-button color="primary" (click)="aceptar()" routerLink="/tests">Aceptar</button>
+  
+        <button mat-raised-button color="warn" routerLink="/test">Cancelar</button>
+        <p>{{mensaje}}</p>
+      </form>
+    </div>
+  </div>
+  

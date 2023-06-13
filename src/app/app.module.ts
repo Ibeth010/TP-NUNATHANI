@@ -45,6 +45,14 @@ import { TratamientoComponent } from './component/tratamiento/tratamiento.compon
 import { TratamientoInsertarComponent } from './component/tratamiento/tratamiento-insertar/tratamiento-insertar.component';
 import { TratamientoDialogoComponent } from './component/tratamiento/tratamiento-listar/tratamiento-dialogo/tratamiento-dialogo.component';
 import { TratamientoListarComponent } from './component/tratamiento/tratamiento-listar/tratamiento-listar.component';
+import { PacienteComponent } from './component/paciente/paciente.component';
+import { PacienteListarComponent } from './component/paciente/paciente-listar/paciente-listar.component';
+import { PacienteDialogoComponent } from './component/paciente/paciente-listar/paciente-dialogo/paciente-dialogo.component';
+import { PacienteInsertarComponent } from './component/paciente/paciente-insertar/paciente-insertar.component';
+import { TestComponent } from './component/test/test.component';
+import { TestListarComponent } from './component/test/test-listar/test-listar.component';
+import { TestDialogoComponent } from './component/test/test-listar/test-dialogo/test-dialogo.component';
+import { TestInsertarComponent } from './component/test/test-insertar/test-insertar.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +89,14 @@ import { TratamientoListarComponent } from './component/tratamiento/tratamiento-
     TratamientoInsertarComponent,
     TratamientoDialogoComponent,
     TratamientoListarComponent,
+    PacienteComponent,
+    PacienteListarComponent,
+    PacienteDialogoComponent,
+    PacienteInsertarComponent,
+    TestComponent,
+    TestListarComponent,
+    TestDialogoComponent,
+    TestInsertarComponent,
 
   ],
   imports: [
