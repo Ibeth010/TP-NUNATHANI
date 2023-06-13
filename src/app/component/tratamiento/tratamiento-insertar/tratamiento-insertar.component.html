@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ng-container>
+    <form [formGroup]="form" (submit)="aceptar()">
+      <h1 class="mensaje">Ingrese los datos</h1>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="No" formControlName="idTratamiento" readonly/>
+      </mat-form-field>
+
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Tema</mat-label>
+        <input matInput placeholder="Tema" formControlName="temaTratamiento" />
+      </mat-form-field>
+
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripcion</mat-label>
+        <input matInput placeholder="Descripcion" formControlName="descripcionTratamiento" />
+      </mat-form-field>
+
+      <br />
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Rutina-Recreativa</mat-label>
+        <mat-select formControlName="rutinas_recreativas" [(value)]="idRutinas_recreativasSeleccionado" required>
+          <mat-option *ngFor="let r of lista" [value]="r.id">
+            {{r.nombre}}
+        </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <br />
+
+      <div style="text-align: center">
+        <button mat-icon-button color="primary">
+          <mat-icon>check</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" routerLink="/rutinas_recreativas">
+          <mat-icon>cancel</mat-icon>
+        </button>
+        <br />
+      </div>
+
+      <p>{{ mensaje }}</p>
+    </form>
+  </ng-container>
+  </body>
+</html>

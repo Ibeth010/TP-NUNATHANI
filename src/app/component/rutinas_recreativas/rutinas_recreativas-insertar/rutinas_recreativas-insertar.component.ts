@@ -17,7 +17,9 @@ export class Rutinas_recreativasInsertarComponent implements OnInit {
   rutinas_recreativas: Rutinas_recreativas = new Rutinas_recreativas();
   mensaje: string = '';
 
-  constructor(private rS: Rutinas_recreativasService, private router: Router, private route: ActivatedRoute) {}
+  constructor(private rS: Rutinas_recreativasService, 
+    private router: Router, 
+    private route: ActivatedRoute) {}
 
   
 
@@ -52,7 +54,7 @@ export class Rutinas_recreativasInsertarComponent implements OnInit {
     }
     if (this.form.valid) {
       
-      this.rutinas_recreativas.id = this.id;
+      this.rutinas_recreativas.id =  this.form.value['id'];
       this.rutinas_recreativas.nombre = this.form.value['nombre'];
       this.rutinas_recreativas.descripcion = this.form.value['descripcion'];
 
@@ -82,6 +84,7 @@ export class Rutinas_recreativasInsertarComponent implements OnInit {
         this.form = new FormGroup({
           id: new FormControl({value: data.id, disabled: true}), //validacion
           nombre: new FormControl(data.nombre, Validators.required), //valid
+          descripcion: new FormControl(data.descripcion,Validators.required)
         });
       });
     }
