@@ -24,7 +24,7 @@ const routes: Routes = [
     component: EspecialidadComponent,
     children: [
       {
-        path: 'especialidadinsertar',component: EspecialidadInsertarComponent},
+        path: 'especialidadesinsertar',component: EspecialidadInsertarComponent},
       {path: 'edicion/:id',component: EspecialidadInsertarComponent},
 
     ],
