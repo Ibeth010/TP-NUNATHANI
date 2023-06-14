@@ -59,10 +59,6 @@ export class SideNavComponent implements OnInit{
      {
       number: '9',
       ruta:'psicologo',
-<<<<<<< HEAD
-      icon:'fa-solid fa-book-open-reader',
-      name:'Psicologo',
-=======
       icon:'fa-solid fa-brain',
       name:'Psicologo',
      },
@@ -79,7 +75,6 @@ export class SideNavComponent implements OnInit{
       ruta:'citas',
       icon: 'fa-solid fa-calendar-alt',
       name:'Citas',
->>>>>>> hugo
      }
 
   ];

@@ -26,12 +26,9 @@ import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-inser
 import { PsicologoComponent } from './component/psicologo/psicologo.component';
 import { PsicologoInsertarComponent } from './component/psicologo/psicologo-insertar/psicologo-insertar.component';
 
-<<<<<<< HEAD
-=======
 import { InformeComponent } from './component/informe/informe.component';
 import { InformeInsertarComponent } from './component/informe/informe-insertar/informe-insertar.component';
 
->>>>>>> hugo
 const routes: Routes = [
   {
     path: 'especialidad',
