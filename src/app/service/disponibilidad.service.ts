@@ -8,12 +8,12 @@ const base_url = environment.base
   providedIn: 'root'
 })
 export class DisponibilidadService {
-  private url = `${base_url}/disponibilidad`
+  private url = `${base_url}/disponibilidades`
   private listaCambio = new Subject<Disponibilidad[]>();
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http: HttpClient) { }
   list(){
-    return this.http.get<Disponibilidad[ ]>(this.url);
+    return this.http.get<Disponibilidad[]>(this.url);
   }
   insert(disponibilidad: Disponibilidad) {
     return this.http.post(this.url, disponibilidad);
@@ -28,7 +28,7 @@ export class DisponibilidadService {
     return this.http.get<Disponibilidad>(`${this.url}/${id}`);
   }
   update(d: Disponibilidad) {
-    return this.http.put(this.url + '/' + d.id, d);
+    return this.http.put(this.url, d);
   }
   eliminar(id: number) {
 
