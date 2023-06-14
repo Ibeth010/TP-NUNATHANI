@@ -45,7 +45,7 @@ import { TratamientoComponent } from './component/tratamiento/tratamiento.compon
 import { TratamientoInsertarComponent } from './component/tratamiento/tratamiento-insertar/tratamiento-insertar.component';
 import { TratamientoDialogoComponent } from './component/tratamiento/tratamiento-listar/tratamiento-dialogo/tratamiento-dialogo.component';
 import { TratamientoListarComponent } from './component/tratamiento/tratamiento-listar/tratamiento-listar.component';
-<<<<<<< HEAD
+
 import { PacienteComponent } from './component/paciente/paciente.component';
 import { PacienteListarComponent } from './component/paciente/paciente-listar/paciente-listar.component';
 import { PacienteDialogoComponent } from './component/paciente/paciente-listar/paciente-dialogo/paciente-dialogo.component';
@@ -59,13 +59,15 @@ import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.co
 import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
 import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/cita-dialogo.component';
 
+import { InformeComponent } from './component/informe/informe.component';
+import { InformeListarComponent } from './component/informe/informe-listar/informe-listar.component';
+import { InformeDialogoComponent } from './component/informe/informe-listar/informe-dialogo/informe-dialogo.component';
+import { InformeInsertarComponent } from './component/informe/informe-insertar/informe-insertar.component';
 
-=======
 import { PsicologoComponent } from './component/psicologo/psicologo.component';
 import { PsicologoListarComponent } from './component/psicologo/psicologo-listar/psicologo-listar.component';
 import { PsicologoInsertarComponent } from './component/psicologo/psicologo-insertar/psicologo-insertar.component';
 import { PsicologoDialogoComponent } from './component/psicologo/psicologo-listar/psicologo-dialogo/psicologo-dialogo.component';
->>>>>>> alexandra
 
 @NgModule({
   declarations: [
@@ -102,7 +104,7 @@ import { PsicologoDialogoComponent } from './component/psicologo/psicologo-lista
     TratamientoInsertarComponent,
     TratamientoDialogoComponent,
     TratamientoListarComponent,
-<<<<<<< HEAD
+
     PacienteComponent,
     PacienteListarComponent,
     PacienteDialogoComponent,
@@ -115,12 +117,17 @@ import { PsicologoDialogoComponent } from './component/psicologo/psicologo-lista
     CitaListarComponent,
     CitaInsertarComponent,
     CitaDialogoComponent,
-=======
+
+    InformeComponent,
+    InformeListarComponent,
+    InformeDialogoComponent,
+    InformeInsertarComponent,
+
     PsicologoComponent,
     PsicologoListarComponent,
     PsicologoInsertarComponent,
     PsicologoDialogoComponent,
->>>>>>> alexandra
+
 
   ],
   imports: [

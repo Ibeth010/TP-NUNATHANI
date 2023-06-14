@@ -47,14 +47,34 @@ export class SideNavComponent implements OnInit{
      {
       number: '7',
       ruta:'test',
-      icon:'fa-solid fa-book-open-reader',
+      icon:'fa-solid fa-clipboard-check',
       name:'Test',
      },
      {
       number: '8',
       ruta:'paciente',
-      icon:'fa-solid fa-book-open-reader',
+      icon:'fa-solid fa-user-injured',
       name:'Paciente',
+     },
+     {
+      number: '9',
+      ruta:'psicologo',
+      icon:'fa-solid fa-brain',
+      name:'Psicologo',
+     },
+
+     {
+      number: '10',
+      ruta:'informes',
+      icon:'fa-solid fa-chart-line',
+      name:'Informe',
+     },
+
+     {
+      number: '11',
+      ruta:'citas',
+      icon: 'fa-solid fa-calendar-alt',
+      name:'Citas',
      }
 
   ];
