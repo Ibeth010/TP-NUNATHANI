@@ -45,6 +45,7 @@ import { TratamientoComponent } from './component/tratamiento/tratamiento.compon
 import { TratamientoInsertarComponent } from './component/tratamiento/tratamiento-insertar/tratamiento-insertar.component';
 import { TratamientoDialogoComponent } from './component/tratamiento/tratamiento-listar/tratamiento-dialogo/tratamiento-dialogo.component';
 import { TratamientoListarComponent } from './component/tratamiento/tratamiento-listar/tratamiento-listar.component';
+<<<<<<< HEAD
 import { PacienteComponent } from './component/paciente/paciente.component';
 import { PacienteListarComponent } from './component/paciente/paciente-listar/paciente-listar.component';
 import { PacienteDialogoComponent } from './component/paciente/paciente-listar/paciente-dialogo/paciente-dialogo.component';
@@ -59,6 +60,12 @@ import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-inser
 import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/cita-dialogo.component';
 
 
+=======
+import { PsicologoComponent } from './component/psicologo/psicologo.component';
+import { PsicologoListarComponent } from './component/psicologo/psicologo-listar/psicologo-listar.component';
+import { PsicologoInsertarComponent } from './component/psicologo/psicologo-insertar/psicologo-insertar.component';
+import { PsicologoDialogoComponent } from './component/psicologo/psicologo-listar/psicologo-dialogo/psicologo-dialogo.component';
+>>>>>>> alexandra
 
 @NgModule({
   declarations: [
@@ -95,6 +102,7 @@ import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/
     TratamientoInsertarComponent,
     TratamientoDialogoComponent,
     TratamientoListarComponent,
+<<<<<<< HEAD
     PacienteComponent,
     PacienteListarComponent,
     PacienteDialogoComponent,
@@ -107,6 +115,12 @@ import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/
     CitaListarComponent,
     CitaInsertarComponent,
     CitaDialogoComponent,
+=======
+    PsicologoComponent,
+    PsicologoListarComponent,
+    PsicologoInsertarComponent,
+    PsicologoDialogoComponent,
+>>>>>>> alexandra
 
   ],
   imports: [
