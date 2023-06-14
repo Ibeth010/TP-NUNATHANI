@@ -54,6 +54,8 @@ import { TestListarComponent } from './component/test/test-listar/test-listar.co
 import { TestDialogoComponent } from './component/test/test-listar/test-dialogo/test-dialogo.component';
 import { TestInsertarComponent } from './component/test/test-insertar/test-insertar.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
