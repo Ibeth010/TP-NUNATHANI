@@ -14,7 +14,7 @@ import { TestDialogoComponent } from './test-dialogo/test-dialogo.component';
 export class TestListarComponent implements OnInit{
   lista: Test[] = [];
   dataSource: MatTableDataSource<Test> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'fecha', 'paciente', 'pregunta', 'opciones', 'ceditar']
+  displayedColumns: string[] = ['id', 'fecha', 'paciente', 'ceditar']
   private idMayor: number = 0;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

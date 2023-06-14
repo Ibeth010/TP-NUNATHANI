@@ -42,16 +42,12 @@ ngOnInit(): void {
     idtest: new FormControl(),
     fechatest: new FormControl(),
     paciente: new FormControl(),
-    pregunta: new FormControl(),
-    opciones: new FormControl(),
   });
 }
 
 aceptar(): void {
   this.test.idtest = this.form.value['idtest'];
   this.test.fechatest = this.form.value['fechatest'];
-  this.test.pregunta = this.form.value['pregunta'];
-  this.test.opciones= this.form.value['opciones'];
 
   let p = new Paciente();
   p.idpaciente = this.idpacienteseleccionado;
@@ -71,8 +67,6 @@ init() {
       this.form = new FormGroup({
         idtest: new FormControl(data.idtest),
         fechatest: new FormControl(data.fechatest),
-        pregunta: new FormControl(data.pregunta),
-        opciones: new FormControl(data.opciones),
       });
     });
   }
