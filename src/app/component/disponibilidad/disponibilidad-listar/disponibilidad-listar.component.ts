@@ -13,18 +13,13 @@ import { DisponibilidadDialogoComponent } from './disponibilidad-dialogo/disponi
 })
 export class DisponibilidadListarComponent implements OnInit {
   dataSource: MatTableDataSource<Disponibilidad> = new MatTableDataSource();
-  lista: Disponibilidad[] = [];
-  displayedColumns: string[] = [
-    'No',
-    'Inicio del turno',
-    'Fin del turno',
-    'Dias laborales',
-    'ceditar',
+
+  displayedColumns: string[] = ['idDisponibilidad','inicio_turno','fin_turno','dias_laborables','ceditar',
   ];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator; //THIS
 
-  private idMayor: number = 0;
+  private idMayor:number = 0;
   constructor(private dS: DisponibilidadService, private dialog: MatDialog) {}
 
   ngOnInit(): void {

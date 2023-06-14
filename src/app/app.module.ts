@@ -45,6 +45,10 @@ import { TratamientoComponent } from './component/tratamiento/tratamiento.compon
 import { TratamientoInsertarComponent } from './component/tratamiento/tratamiento-insertar/tratamiento-insertar.component';
 import { TratamientoDialogoComponent } from './component/tratamiento/tratamiento-listar/tratamiento-dialogo/tratamiento-dialogo.component';
 import { TratamientoListarComponent } from './component/tratamiento/tratamiento-listar/tratamiento-listar.component';
+import { PsicologoComponent } from './component/psicologo/psicologo.component';
+import { PsicologoListarComponent } from './component/psicologo/psicologo-listar/psicologo-listar.component';
+import { PsicologoInsertarComponent } from './component/psicologo/psicologo-insertar/psicologo-insertar.component';
+import { PsicologoDialogoComponent } from './component/psicologo/psicologo-listar/psicologo-dialogo/psicologo-dialogo.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +85,10 @@ import { TratamientoListarComponent } from './component/tratamiento/tratamiento-
     TratamientoInsertarComponent,
     TratamientoDialogoComponent,
     TratamientoListarComponent,
+    PsicologoComponent,
+    PsicologoListarComponent,
+    PsicologoInsertarComponent,
+    PsicologoDialogoComponent,
 
   ],
   imports: [

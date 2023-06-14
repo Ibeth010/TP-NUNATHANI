@@ -17,6 +17,8 @@ import { Rutinas_recreativasInsertarComponent } from './component/rutinas_recrea
 import { Rutinas_recreativasComponent } from './component/rutinas_recreativas/rutinas_recreativas.component';
 import { TratamientoComponent } from './component/tratamiento/tratamiento.component';
 import { TratamientoInsertarComponent } from './component/tratamiento/tratamiento-insertar/tratamiento-insertar.component';
+import { PsicologoComponent } from './component/psicologo/psicologo.component';
+import { PsicologoInsertarComponent } from './component/psicologo/psicologo-insertar/psicologo-insertar.component';
 
 const routes: Routes = [
   {
@@ -50,7 +52,7 @@ const routes: Routes = [
     component: DisponibilidadComponent
     ,
     children: [
-      {path: 'disponibilidadinsertar', component: DisponibilidadInsertarComponent},
+      {path: 'disponibilidadesinsertar', component: DisponibilidadInsertarComponent},
       {path: 'edicion/:id', component: DisponibilidadInsertarComponent},
     ],
   },
@@ -73,6 +75,16 @@ const routes: Routes = [
       {path: 'edicion/:id', component: TratamientoInsertarComponent},
     ],
   },
+  {
+    path: 'psicologo',
+    component: PsicologoComponent
+    ,
+    children: [
+      {path: 'psicologosinsertar', component: PsicologoInsertarComponent},
+      {path: 'edicion/:id', component: PsicologoInsertarComponent},
+    ],
+  },
+
   
 ];
 
