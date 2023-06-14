@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ng-container>
+      <form [formGroup]="form" (submit)="aceptar()">
+        <h1> Ingresar datos de informe</h1>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Código</mat-label>
+          <input matInput placeholder="Código" formControlName="idInforme" readonly />
+        </mat-form-field>
+
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Resultado</mat-label>
+          <input
+            matInput
+            required
+            placeholder="resultado"
+            formControlName="resultado_testInforme"
+          />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field appearance="fill">
+          <mat-label>Test</mat-label>
+          <mat-select formControlName="fechatest" [(value)]="idSeleccionadoTest" required>
+            <mat-option *ngFor="let te of listaTest" [value]="te.idtest">
+              {{te.fechatest}}
+          </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+         <br />
+         <mat-form-field appearance="fill">
+          <mat-label>Tratamiento</mat-label>
+          <mat-select formControlName="temaTratamiento" [(value)]="idSeleccionadoTratamiento" required>
+            <mat-option *ngFor="let tr of listaTratamiento" [value]="tr.idTratamiento">
+              {{tr.temaTratamiento}}
+          </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <br />
+        <div style="text-align: center">
+          <button mat-icon-button color="primary">
+            <mat-icon>check</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" routerLink="/informes">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </div>
+
+        <br />
+        <p>{{ mensaje }}</p>
+      </form>
+    </ng-container>
+  </body>
+</html>
