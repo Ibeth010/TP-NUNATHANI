@@ -55,6 +55,12 @@ export class SideNavComponent implements OnInit{
       ruta:'paciente',
       icon:'fa-solid fa-book-open-reader',
       name:'Paciente',
+     },
+     {
+      number: '9',
+      ruta:'psicologo',
+      icon:'fa-solid fa-book-open-reader',
+      name:'Psicologo',
      }
 
   ];

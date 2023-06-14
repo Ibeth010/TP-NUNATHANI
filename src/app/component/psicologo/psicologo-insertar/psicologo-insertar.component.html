@@ -54,8 +54,8 @@
          <mat-form-field appearance="fill">
           <mat-label>Usuario</mat-label>
           <mat-select formControlName="nameUsuario" [(value)]="idSeleccionadou" required>
-            <mat-option *ngFor="let b of listau" [value]="b.id">
-              {{b.nameUsuario}}
+            <mat-option *ngFor="let b of listau" [value]="b.idusuario">
+              {{b.nameusuario}}
           </mat-option>
           </mat-select>
         </mat-form-field>
