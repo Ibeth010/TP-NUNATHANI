@@ -17,7 +17,9 @@ export class UsuarioInsertarComponent implements OnInit{
   usuario: Usuario = new Usuario();
   mensaje: string = '';
 
-  constructor(private uS: UsuarioService, private router: Router, private route: ActivatedRoute) {}
+  constructor(private uS: UsuarioService, 
+    private router: Router, 
+    private route: ActivatedRoute) {}
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
@@ -26,18 +28,18 @@ export class UsuarioInsertarComponent implements OnInit{
     });
 
     this.form = new FormGroup({
-      id: new FormControl({value: '', disabled: true}),
-      nameUsuario: new FormControl(),
-      SnameUsuario: new FormControl(),
-      PassUsuario: new FormControl(),
+      idusuario: new FormControl({value: '', disabled: true}),
+      nameusuario: new FormControl(),
+      snameusuario: new FormControl(),
+      passusuario: new FormControl(),
       telusuario: new FormControl(null, [Validators.pattern('^[0-9]{9}$')]),
     });
   }
   aceptar(): void {
-    this.usuario.id = this.form.value['id'];
-    this.usuario.nameUsuario = this.form.value['nameUsuario'];
-    this.usuario.SnameUsuario = this.form.value['SnameUsuario'];
-    this.usuario.PassUsuario = this.form.value['PassUsuario'];
+    this.usuario.idusuario = this.form.value['idusuario'];
+    this.usuario.nameusuario = this.form.value['nameusuario'];
+    this.usuario.snameusuario = this.form.value['snameusuario'];
+    this.usuario.passusuario = this.form.value['passusuario'];
     this.usuario.telusuario = this.form.value['telusuario'];
 
     if (this.form.valid) {
@@ -63,10 +65,10 @@ export class UsuarioInsertarComponent implements OnInit{
     if (this.edicion) {
       this.uS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
-          nameUsuario: new FormControl(data.nameUsuario),
-          SnameUsuario: new FormControl(data.SnameUsuario),
-          PassUsuario: new FormControl(data.PassUsuario),
+          idusuario: new FormControl(data.idusuario),
+          nameusuario: new FormControl(data.nameusuario),
+          snameusuario: new FormControl(data.snameusuario),
+          passusuario: new FormControl(data.passusuario),
           telusuario: new FormControl(data.telusuario, [Validators.pattern('^[0-9]{9}$')]),
         });
       });

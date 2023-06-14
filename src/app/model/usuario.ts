@@ -1,7 +1,7 @@
 export class Usuario{
-    id:number=0
-    nameUsuario:string=""
-    SnameUsuario:string=""
-    PassUsuario:string=""
+    idusuario:number=0
+    nameusuario:string=""
+    snameusuario:string=""
+    passusuario:string=""
     telusuario:number=0
 }

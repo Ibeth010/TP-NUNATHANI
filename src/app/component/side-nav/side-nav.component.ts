@@ -43,6 +43,18 @@ export class SideNavComponent implements OnInit{
       ruta:'tratamientos',
       icon:'fa-solid fa-book-open-reader',
       name:'Tratamiento',
+     },
+     {
+      number: '7',
+      ruta:'test',
+      icon:'fa-solid fa-book-open-reader',
+      name:'Test',
+     },
+     {
+      number: '8',
+      ruta:'paciente',
+      icon:'fa-solid fa-book-open-reader',
+      name:'Paciente',
      }
 
   ];

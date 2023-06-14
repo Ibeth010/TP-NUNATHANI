@@ -20,26 +20,25 @@ export class UsuarioListarComponent implements OnInit {
   private idMayor: number = 0;
 
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator; //THIS
-  constructor(private uS: UsuarioService, private dialog: MatDialog) {
-  }
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+    constructor(private uS:UsuarioService, private dialog: MatDialog){}
   ngOnInit(): void {
-    this.uS.list().subscribe(data => {
-      this.dataSource = new MatTableDataSource(data);
-      this.dataSource.paginator = this.paginator; //THIS
+  
+    this.uS.list().subscribe((data)=>{ 
+      this.dataSource=new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
-    this.uS.getList().subscribe(data => {
-      this.dataSource = new MatTableDataSource(data);
-      this.dataSource.paginator = this.paginator; //THIS
+    this.uS.getList().subscribe((data)=>{
+
+      this.dataSource=new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
     this.uS.getConfirmaEliminacion().subscribe(data => {
       data == true ? this.eliminar(this.idMayor) : false;
+      this.dataSource.paginator = this.paginator;
     });
   }
-  ocultarContrasena(contra: string): string {
-    return contra.replace(/./g, "*");
-  }
-  
   confirmar(id: number) {
     this.idMayor = id;
     this.dialog.open(UsuarioDialogoComponent);
@@ -47,15 +46,13 @@ export class UsuarioListarComponent implements OnInit {
   eliminar(id: number) {
     this.uS.eliminar(id).subscribe(() => {
       this.uS.list().subscribe(data => {
-        this.uS.setList(data);/* se ejecuta la línea 27 */
-        this.dataSource = new MatTableDataSource(data); //THIS
-        this.dataSource.paginator = this.paginator; //THIS
+        this.uS.setList(data);
       });
     });
   }
 
-  filtrar(u: any) {
-    this.dataSource.filter = u.target.value.trim();
+  filtrar(e:any){
+    this.dataSource.filter=e.target.value.trim();
   }
 }
 

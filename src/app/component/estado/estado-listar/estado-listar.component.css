@@ -59,6 +59,10 @@ a:hover {
 .mat-raised-button:hover {
   background-color: #c82333;
 }
+.example-button-row button {
+  background-color: black;
+  color: white;
+}
 
 .mat-icon-button {
   cursor: pointer;
