@@ -15,25 +15,44 @@ import { DisponibilidadComponent } from './component/disponibilidad/disponibilid
 
 import { Rutinas_recreativasInsertarComponent } from './component/rutinas_recreativas/rutinas_recreativas-insertar/rutinas_recreativas-insertar.component';
 import { Rutinas_recreativasComponent } from './component/rutinas_recreativas/rutinas_recreativas.component';
+import { TratamientoComponent } from './component/tratamiento/tratamiento.component';
+import { TratamientoInsertarComponent } from './component/tratamiento/tratamiento-insertar/tratamiento-insertar.component';
+<<<<<<< HEAD
+import { PacienteComponent } from './component/paciente/paciente.component';
+import { PacienteInsertarComponent } from './component/paciente/paciente-insertar/paciente-insertar.component';
+import { TestComponent } from './component/test/test.component';
+import { TestInsertarComponent } from './component/test/test-insertar/test-insertar.component';
+import { CitaComponent } from './component/cita/cita.component';
+import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
+=======
+import { PsicologoComponent } from './component/psicologo/psicologo.component';
+import { PsicologoInsertarComponent } from './component/psicologo/psicologo-insertar/psicologo-insertar.component';
 
+>>>>>>> alexandra
 const routes: Routes = [
   {
     path: 'especialidad',
     component: EspecialidadComponent,
     children: [
       {
-        path: 'especialidadinsertar',component: EspecialidadInsertarComponent},
+        path: 'especialidadesinsertar',component: EspecialidadInsertarComponent},
       {path: 'edicion/:id',component: EspecialidadInsertarComponent},
 
     ],
   },
   
   {
-    path: 'estado',component: EstadoComponent,children: [
+    path: 'estados',component: EstadoComponent,children: [
       {path: 'estadoinsertar', component: EstadoInsertarComponent},
       {path: 'edicion/:id', component: EstadoInsertarComponent},
-    ],
+    ]
   },
+
+  {path: 'citas',component: CitaComponent, children:[
+    {path: 'nuevo',component: CitaInsertarComponent},
+    {path: 'edicion/:id',component:CitaInsertarComponent},
+  ]
+ },
   
   {
     path:'usuario',
@@ -42,13 +61,29 @@ const routes: Routes = [
       {path: 'usuario-insertar', component: UsuarioInsertarComponent},
       {path: 'edicion/:id', component: UsuarioInsertarComponent},
     ],
-  },  
+  }, 
+  {
+    path:'paciente',
+    component:PacienteComponent,
+    children: [
+      {path: 'paciente-insertar', component: PacienteInsertarComponent},
+      {path: 'edicion/:id', component: PacienteInsertarComponent},
+    ],
+  }, 
+  {
+    path:'test',
+    component:TestComponent,
+    children: [
+      {path: 'test-insertar', component: TestInsertarComponent},
+      {path: 'edicion/:id', component: TestInsertarComponent},
+    ],
+  },
  {
     path: 'disponibilidad',
     component: DisponibilidadComponent
     ,
     children: [
-      {path: 'disponibilidadinsertar', component: DisponibilidadInsertarComponent},
+      {path: 'disponibilidadesinsertar', component: DisponibilidadInsertarComponent},
       {path: 'edicion/:id', component: DisponibilidadInsertarComponent},
     ],
   },
@@ -61,6 +96,27 @@ const routes: Routes = [
       {path: 'edicion/:id', component: Rutinas_recreativasInsertarComponent},
     ],
   },
+
+  {
+    path: 'tratamientos',
+    component: TratamientoComponent
+    ,
+    children: [
+      {path: 'tratamientosinsertar', component: TratamientoInsertarComponent},
+      {path: 'edicion/:id', component: TratamientoInsertarComponent},
+    ],
+  },
+  {
+    path: 'psicologo',
+    component: PsicologoComponent
+    ,
+    children: [
+      {path: 'psicologosinsertar', component: PsicologoInsertarComponent},
+      {path: 'edicion/:id', component: PsicologoInsertarComponent},
+    ],
+  },
+
+  
 ];
 
 @NgModule({

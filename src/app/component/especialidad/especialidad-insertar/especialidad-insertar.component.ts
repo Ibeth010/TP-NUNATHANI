@@ -32,7 +32,7 @@ export class EspecialidadInsertarComponent implements OnInit {
 
     this.form = new FormGroup({
 
-      id: new FormControl({value: '', disabled: true}),
+      idEspecialidad: new FormControl({value: '', disabled: true}),
       tipoEspecialidad: new FormControl(),
       centroEspecialidad: new FormControl(),
       descripcionEspecialidad: new FormControl()
@@ -43,7 +43,7 @@ export class EspecialidadInsertarComponent implements OnInit {
   aceptar(): void {
 
 
-    this.especialidad.id = this.form.value['id'];
+    this.especialidad.idEspecialidad = this.form.value['idEspecialidad'];
     this.especialidad.tipoEspecialidad = this.form.value['tipoEspecialidad'];
     this.especialidad.descripcionEspecialidad = this.form.value['descripcionEspecialidad'];
     this.especialidad.centroEspecialidad = this.form.value['centroEspecialidad'];
@@ -61,7 +61,7 @@ export class EspecialidadInsertarComponent implements OnInit {
           });
         });}
        else{
-        this.eS.insert(this.especialidad).subscribe((data) => {
+        this.eS.insert(this.especialidad).subscribe(() => {
           this.eS.list().subscribe((data) => {
             this.eS.setList(data);
           });
@@ -75,8 +75,9 @@ export class EspecialidadInsertarComponent implements OnInit {
   init() {
     if (this.edicion) {
       this.eS.listId(this.id).subscribe((data) => {
+
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          idEspecialidad: new FormControl(data.idEspecialidad),
           tipoEspecialidad: new FormControl(data.tipoEspecialidad),
           descripcionEspecialidad: new FormControl(data.descripcionEspecialidad),
           centroEspecialidad: new FormControl(data.centroEspecialidad),

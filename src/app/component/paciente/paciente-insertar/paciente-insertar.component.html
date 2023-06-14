@@ -1,0 +1,42 @@
+<div>
+    <div class="container">
+      <h1>Pacientes</h1>
+      <form [formGroup]="form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Id</mat-label>
+          <input matInput placeholder="Id" formControlName="idpaciente" readonly>
+        </mat-form-field>
+  
+        <br>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Correo</mat-label>
+          <input matInput required placeholder="correo" formControlName="correopaciente">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha de nacimiento</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="nacimientopaciente">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+  
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Usuario</mat-label>
+          <mat-select formControlName="usuario" [(value)]="idusuarioseleccionado" required>
+            <mat-option *ngFor="let u of lista" [value]="u.idusuario">
+              {{u.nameusuario}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <br>
+        <button mat-raised-button color="primary" (click)="aceptar()" routerLink="/pacientes">Aceptar</button>
+  
+        <button mat-raised-button color="warn" routerLink="/paciente">Cancelar</button>
+        <p>{{mensaje}}</p>
+      </form>
+    </div>
+  </div>
+  

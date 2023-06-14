@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  
+  <div class="container">
+    <div style=" text-align: center;">
+      <h1>Lista de Tratamiento</h1>
+    </div>
+    <div style="text-align: right;" class="example-button-row">
+      <button mat-raised-button color="primary" routerLink="/tratamientos/tratamientosinsertar">Nuevo</button>
+    </div>
+    <mat-form-field>
+      <input matInput (keyup)="filtrar($event)" placeholder="Buscar">
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.idTratamiento}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="tema">
+        <th mat-header-cell *matHeaderCellDef> Tema </th>
+        <td mat-cell *matCellDef="let element"> {{element.temaTratamiento}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+        <td mat-cell *matCellDef="let element"> {{element.descripcionTratamiento}} </td>
+      </ng-container>
+      <ng-container matColumnDef="rutinas_recreativas">
+        <th mat-header-cell *matHeaderCellDef> Rutina Recreativa </th>
+        <td mat-cell *matCellDef="let element"> {{element.rutinas_recreativas.nombre}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="ceditar">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Acciones</th>
+        <td mat-cell *matCellDef ="let element" style="text-align: center; height: 100">
+
+          <button mat-icon-button class="custom-button" [routerLink]="['edicion', element.idTratamiento]"> <!-- Utilizar una clase de estilo personalizada "custom-button" -->
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button class="custom-button" (click)="confirmar(element.idTratamiento)"> <!-- Utilizar una clase de estilo personalizada "custom-button" -->
+            <mat-icon>delete</mat-icon>
+          </button> 
+                    
+        </td>
+      </ng-container>
+      
+     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+</body>
+
+</html>

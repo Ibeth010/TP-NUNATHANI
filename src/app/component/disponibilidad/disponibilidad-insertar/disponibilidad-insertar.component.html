@@ -12,14 +12,14 @@
       <h1 class="mensaje">Ingrese los datos</h1>
       <mat-form-field class="example-full-width">
         <mat-label>Código</mat-label>
-        <input matInput placeholder="No" formControlName="id" readonly/>
+        <input matInput placeholder="idDisponibilidad" formControlName="idDisponibilidad" readonly/>
       </mat-form-field>
       <br />
       <mat-form-field class="example-full-width">
         <mat-label>Inicio turno</mat-label>
         <input required
           matInput
-          placeholder="Inicio del turno"
+          placeholder="inicio_turno"
           formControlName="inicio_turno"
         />
       </mat-form-field>
@@ -28,7 +28,7 @@
         <mat-label>Fin turno</mat-label>
         <input required
           matInput
-          placeholder="Fin del turno"
+          placeholder="fin_turno"
           formControlName="fin_turno"
         />
       </mat-form-field>
@@ -38,9 +38,8 @@
       <mat-form-field appearance="fill">
         <mat-label>Dias</mat-label>
         <mat-select
-          placeholder="Elija día"
-          formControlName="dias_laborales"
-          multiple
+          placeholder="dias_laborables"
+          formControlName="dias_laborables"
           required> <!-- Agregar el atributo "required" -->
           <mat-option value="Lunes">Lunes</mat-option>
           <mat-option value="Martes">Martes</mat-option>

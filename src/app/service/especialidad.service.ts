@@ -8,8 +8,9 @@ const base_url = environment.base
 @Injectable({
   providedIn: 'root'
 })
+
 export class EspecialidadService {
-  private url=`${base_url}/Especialidad`;
+  private url=`${base_url}/especialidades`;
   private listaCambio = new Subject<Especialidad[]>();
   private confirmarEliminacion = new Subject<Boolean>()
 
@@ -30,8 +31,9 @@ export class EspecialidadService {
   listId(id: number) {
     return this.http.get<Especialidad>(`${this.url}/${id}`);
   }
+ 
   update(e: Especialidad) {
-    return this.http.put(this.url + '/' + e.id, e);
+    return this.http.put(this.url, e);
   }
   eliminar(id:number){
     return this.http.delete(`${this.url}/${id}`);

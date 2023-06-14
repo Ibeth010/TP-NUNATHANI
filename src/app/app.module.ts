@@ -41,6 +41,31 @@ import { Rutinas_recreativasComponent } from './component/rutinas_recreativas/ru
 import { Rutinas_recreativasListarComponent } from './component/rutinas_recreativas/rutinas_recreativas-listar/rutinas_recreativas-listar.component';
 import { Rutinas_recreativasInsertarComponent } from './component/rutinas_recreativas/rutinas_recreativas-insertar/rutinas_recreativas-insertar.component';
 import { Rutinas_recreativasDialogoComponent } from './component/rutinas_recreativas/rutinas_recreativas-listar/rutinas-recreativas-dialogo/rutinas-recreativas-dialogo.component';
+import { TratamientoComponent } from './component/tratamiento/tratamiento.component';
+import { TratamientoInsertarComponent } from './component/tratamiento/tratamiento-insertar/tratamiento-insertar.component';
+import { TratamientoDialogoComponent } from './component/tratamiento/tratamiento-listar/tratamiento-dialogo/tratamiento-dialogo.component';
+import { TratamientoListarComponent } from './component/tratamiento/tratamiento-listar/tratamiento-listar.component';
+<<<<<<< HEAD
+import { PacienteComponent } from './component/paciente/paciente.component';
+import { PacienteListarComponent } from './component/paciente/paciente-listar/paciente-listar.component';
+import { PacienteDialogoComponent } from './component/paciente/paciente-listar/paciente-dialogo/paciente-dialogo.component';
+import { PacienteInsertarComponent } from './component/paciente/paciente-insertar/paciente-insertar.component';
+import { TestComponent } from './component/test/test.component';
+import { TestListarComponent } from './component/test/test-listar/test-listar.component';
+import { TestDialogoComponent } from './component/test/test-listar/test-dialogo/test-dialogo.component';
+import { TestInsertarComponent } from './component/test/test-insertar/test-insertar.component';
+import { CitaComponent } from './component/cita/cita.component';
+import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
+import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
+import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/cita-dialogo.component';
+
+
+=======
+import { PsicologoComponent } from './component/psicologo/psicologo.component';
+import { PsicologoListarComponent } from './component/psicologo/psicologo-listar/psicologo-listar.component';
+import { PsicologoInsertarComponent } from './component/psicologo/psicologo-insertar/psicologo-insertar.component';
+import { PsicologoDialogoComponent } from './component/psicologo/psicologo-listar/psicologo-dialogo/psicologo-dialogo.component';
+>>>>>>> alexandra
 
 @NgModule({
   declarations: [
@@ -73,6 +98,29 @@ import { Rutinas_recreativasDialogoComponent } from './component/rutinas_recreat
     
     HeaderComponent,
     SideNavComponent,
+    TratamientoComponent,
+    TratamientoInsertarComponent,
+    TratamientoDialogoComponent,
+    TratamientoListarComponent,
+<<<<<<< HEAD
+    PacienteComponent,
+    PacienteListarComponent,
+    PacienteDialogoComponent,
+    PacienteInsertarComponent,
+    TestComponent,
+    TestListarComponent,
+    TestDialogoComponent,
+    TestInsertarComponent,
+    CitaComponent,
+    CitaListarComponent,
+    CitaInsertarComponent,
+    CitaDialogoComponent,
+=======
+    PsicologoComponent,
+    PsicologoListarComponent,
+    PsicologoInsertarComponent,
+    PsicologoDialogoComponent,
+>>>>>>> alexandra
 
   ],
   imports: [
