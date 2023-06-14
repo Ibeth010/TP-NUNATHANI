@@ -53,6 +53,10 @@ import { TestComponent } from './component/test/test.component';
 import { TestListarComponent } from './component/test/test-listar/test-listar.component';
 import { TestDialogoComponent } from './component/test/test-listar/test-dialogo/test-dialogo.component';
 import { TestInsertarComponent } from './component/test/test-insertar/test-insertar.component';
+import { CitaComponent } from './component/cita/cita.component';
+import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
+import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
+import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/cita-dialogo.component';
 
 
 
@@ -99,6 +103,10 @@ import { TestInsertarComponent } from './component/test/test-insertar/test-inser
     TestListarComponent,
     TestDialogoComponent,
     TestInsertarComponent,
+    CitaComponent,
+    CitaListarComponent,
+    CitaInsertarComponent,
+    CitaDialogoComponent,
 
   ],
   imports: [

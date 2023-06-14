@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+      
+      <form [formGroup]="form" (submit)="aceptar()">
+        <h1 class="mensaje">Ingrese datos de cita</h1>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Id</mat-label>
+        <input matInput placeholder="id" formControlName="idCita" readonly />
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fechaCita" [max]="maxFecha"required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Id Estado</mat-label>
+        <mat-select formControlName="estado" [(value)]="idEstadoSelectionado" required>
+          <mat-option *ngFor="let e of lista" [value]="e.idEstado">
+            {{e.idEstado}} - {{ e.dispEstado }}
+        </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <br/>
+      <div style="text-align: center">
+        <button mat-icon-button color="primary">
+          <mat-icon>check</mat-icon>
+        </button>
+
+        <button mat-icon-button color="warn" routerLink="/citas">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      
+      </div>
+      <p>{{mensaje}}</p>
+      </form>
+  </div>
+</body>
+</html>

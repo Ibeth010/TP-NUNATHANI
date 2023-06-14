@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { Estado } from 'src/app/model/estado';
 import { EstadoService } from 'src/app/service/estado.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog'
+import { MatPaginator } from "@angular/material/paginator";
 import { EstadoDialogoComponent } from './estado-dialogo/estado-dialogo.component';
 @Component({
   selector: 'app-estado-listar',
@@ -18,17 +19,20 @@ export class EstadoListarComponent implements OnInit {
     'ceditar'
   ];
   private idMayor: number = 0;
-
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private rS: EstadoService, private dialog:MatDialog) {}
   ngOnInit(): void {
     this.rS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
     this.rS.getList().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
     this.rS.getConfirmaEliminacion().subscribe(data => {
       data == true ? this.eliminar(this.idMayor) : false;
+      this.dataSource.paginator = this.paginator;
     });
   }
   confirmar(id: number) {

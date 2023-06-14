@@ -1,37 +1,31 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Estado } from '../model/estado';
 import { Cita } from '../model/cita';
+import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
 const base_url = environment.base
+
 @Injectable({
   providedIn: 'root'
 })
-export class EstadoService {
-  private url = `${base_url}/estados`
-  private listaCambio = new Subject<Estado[]>();
+export class CitaService {
+  private url = `${base_url}/citas`
+  private listaCambio = new Subject<Cita[]>()
   private confirmaEliminacion = new Subject<Boolean>()
 
   constructor(private http: HttpClient) { }
-  list(){
-    return this.http.get<Estado[ ]>(this.url);
+  list() {
+    return this.http.get<Cita[]>(this.url);
   }
-  insert(Estado: Estado) {
-    return this.http.post(this.url, Estado);
+  insert(cita: Cita) {
+    return this.http.post(this.url, cita);
   }
-  getList() {
-    return this.listaCambio.asObservable();
-  }
-  setList(listaNueva: Estado[]) {
+  setList(listaNueva: Cita[]) {
     this.listaCambio.next(listaNueva);
   }
-  listId(id: number) {
-    return this.http.get<Estado>(`${this.url}/${id}`);
-  }
-  update(estado: Estado) {
-    //return this.http.put(this.url + '/' + estado.idEstado, estado);
-    return this.http.put(this.url, estado);
+  getLista() {
+    return this.listaCambio.asObservable();
   }
 
   listIdCita(id: number) {
@@ -41,6 +35,7 @@ export class EstadoService {
     //return this.http.put(this.url + '/' + estado.idEstado, estado);
     return this.http.put(this.url, cita);
   }
+
   eliminar(id: number) {
     return this.http.delete(`${this.url}/${id}`);
   }

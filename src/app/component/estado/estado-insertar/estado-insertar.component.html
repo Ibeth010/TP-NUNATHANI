@@ -10,11 +10,11 @@
   <body>
     <form [formGroup]="form" (submit)="aceptar()">
 
-      <h1 class="mensaje">Ingrese los datos</h1>
+      <h1 class="mensaje">Ingrese datos de estado</h1>
 
       <mat-form-field class="example-full-width">
-        <mat-label>Código</mat-label>
-        <input matInput placeholder="No" formControlName="id" readonly />
+        <mat-label>Id</mat-label>
+        <input matInput placeholder="Id" formControlName="idEstado" readonly />
       </mat-form-field>
 
       <br />
@@ -22,7 +22,7 @@
       <!-- Ejemplo de un mat-select con selección  -->
       <mat-form-field appearance="fill">
         <mat-label>Disponibilidad</mat-label>
-        <mat-select required placeholder="Seleccione la disponibilidad" formControlName="disponibilidad">
+        <mat-select required placeholder="Seleccione la disponibilidad" formControlName="dispEstado">
           <mat-option value="Disponible">Disponible</mat-option>
           <mat-option value="No disponible">No disponible</mat-option>
         </mat-select>
@@ -36,7 +36,7 @@
           <mat-icon>check</mat-icon>
         </button>
 
-        <button mat-icon-button color="warn" routerLink="/estado">
+        <button mat-icon-button color="warn" routerLink="/estados">
           <mat-icon>cancel</mat-icon>
         </button>
         <br />

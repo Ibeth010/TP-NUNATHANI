@@ -1,4 +1,4 @@
 export class Estado {
-  id:number=0
-  disponibilidad:string= ""
+  idEstado:number=0
+  dispEstado:string= ""
  }
