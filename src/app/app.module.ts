@@ -68,6 +68,10 @@ import { PsicologoComponent } from './component/psicologo/psicologo.component';
 import { PsicologoListarComponent } from './component/psicologo/psicologo-listar/psicologo-listar.component';
 import { PsicologoInsertarComponent } from './component/psicologo/psicologo-insertar/psicologo-insertar.component';
 import { PsicologoDialogoComponent } from './component/psicologo/psicologo-listar/psicologo-dialogo/psicologo-dialogo.component';
+import { PreguntaComponent } from './component/pregunta/pregunta.component';
+import { PreguntaListarComponent } from './component/pregunta/pregunta-listar/pregunta-listar.component';
+import { PreguntaDialogoComponent } from './component/pregunta/pregunta-listar/pregunta-dialogo/pregunta-dialogo.component';
+import { PreguntaInsertarComponent } from './component/pregunta/pregunta-insertar/pregunta-insertar.component';
 
 @NgModule({
   declarations: [
@@ -127,6 +131,10 @@ import { PsicologoDialogoComponent } from './component/psicologo/psicologo-lista
     PsicologoListarComponent,
     PsicologoInsertarComponent,
     PsicologoDialogoComponent,
+    PreguntaComponent,
+    PreguntaListarComponent,
+    PreguntaDialogoComponent,
+    PreguntaInsertarComponent,
 
 
   ],

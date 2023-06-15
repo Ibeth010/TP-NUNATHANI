@@ -34,7 +34,7 @@ export class SideNavComponent implements OnInit{
     },
     {
      number: '5',
-     ruta:'estado',
+     ruta:'estados',
      icon:'fa-solid  fa-users',
      name: 'Estado',
     },
@@ -75,6 +75,12 @@ export class SideNavComponent implements OnInit{
       ruta:'citas',
       icon: 'fa-solid fa-calendar-alt',
       name:'Citas',
+     },
+     {
+      number:'12',
+      ruta:'preguntas',
+      icon:'fa-solid fa-calendar-alt',
+      name: 'Preguntas',
      }
 
   ];

@@ -20,11 +20,10 @@
       <mat-form-field style="flex: 1; margin-right: 16px;">
         <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
       </mat-form-field>
-      <button mat-icon-button color="warn" routerLink="/paciente">
-        Paciente
-      </button>
 
-      <button mat-raised-button color="warn" routerLink="/usuario/usuario-insertar">Nuevo</button>
+      <div style="text-align: right;" class="example-button-row">
+        <button mat-raised-button color="warn" routerLink="/usuario/usuario-insertar">Nuevo</button>
+      </div>
     </div>
     
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">

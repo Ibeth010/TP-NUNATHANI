@@ -28,6 +28,8 @@ import { PsicologoInsertarComponent } from './component/psicologo/psicologo-inse
 
 import { InformeComponent } from './component/informe/informe.component';
 import { InformeInsertarComponent } from './component/informe/informe-insertar/informe-insertar.component';
+import { PreguntaComponent } from './component/pregunta/pregunta.component';
+import { PreguntaInsertarComponent } from './component/pregunta/pregunta-insertar/pregunta-insertar.component';
 
 const routes: Routes = [
   {
@@ -53,6 +55,13 @@ const routes: Routes = [
     {path: 'edicion/:id',component:CitaInsertarComponent},
   ]
  },
+ {
+  path: 'preguntas',component: PreguntaComponent,children: [
+    {path: 'nuevo',component: PreguntaInsertarComponent},
+    {path: 'edicion/:id',component: PreguntaInsertarComponent},
+
+  ],
+},
   
   {
     path:'usuario',

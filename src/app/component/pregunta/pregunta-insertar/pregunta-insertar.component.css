@@ -59,10 +59,6 @@ body {
   .mat-raised-button:hover {
     background-color: #c82333;
   }
-  .example-button-row button {
-    background-color: black;
-    color: white;
-  }
   
   .mat-icon-button {
     cursor: pointer;
@@ -116,5 +112,55 @@ body {
   
   .custom-button {
     color: #6d2b79; /* Cambiar el color a morado (puedes usar cualquier valor de color morado que desees) */
+  }
+  
+  /* Estilos adicionales para el formulario */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  form {
+    width: 80%;
+    max-width: 400px;
+    padding: 40px;
+    box-shadow: 0px 10px 10px -6px black;
+    border-radius: 4px;
+    background-color: #c5b7c2; /* Agregar relleno blanco al formulario */
+  }
+  
+  
+  .example-full-width,
+  .example-full-width mat-form-field {
+    width: 100%;
+  }
+  
+  button {
+    margin-top: 16px;
+  }
+  
+  .mensaje {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para mensajes de error */
+  .error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  }
+  
+  /* Estilos para mensajes de éxito */
+  .success-message {
+  color: #28a745;
+  font-size: 14px;
+  margin-top: -20px;
+  margin-bottom: 10px;
   }
   
