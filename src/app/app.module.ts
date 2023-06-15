@@ -72,6 +72,10 @@ import { PreguntaComponent } from './component/pregunta/pregunta.component';
 import { PreguntaListarComponent } from './component/pregunta/pregunta-listar/pregunta-listar.component';
 import { PreguntaDialogoComponent } from './component/pregunta/pregunta-listar/pregunta-dialogo/pregunta-dialogo.component';
 import { PreguntaInsertarComponent } from './component/pregunta/pregunta-insertar/pregunta-insertar.component';
+import { OpcionComponent } from './component/opcion/opcion.component';
+import { OpcionListarComponent } from './component/opcion/opcion-listar/opcion-listar.component';
+import { OpcionInsertarComponent } from './component/opcion/opcion-insertar/opcion-insertar.component';
+import { OpcionDialogoComponent } from './component/opcion/opcion-listar/opcion-dialogo/opcion-dialogo.component';
 
 @NgModule({
   declarations: [
@@ -135,6 +139,10 @@ import { PreguntaInsertarComponent } from './component/pregunta/pregunta-inserta
     PreguntaListarComponent,
     PreguntaDialogoComponent,
     PreguntaInsertarComponent,
+    OpcionComponent,
+    OpcionListarComponent,
+    OpcionInsertarComponent,
+    OpcionDialogoComponent,
 
 
   ],

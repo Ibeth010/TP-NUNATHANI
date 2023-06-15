@@ -79,9 +79,17 @@ export class SideNavComponent implements OnInit{
      {
       number:'12',
       ruta:'preguntas',
-      icon:'fa-solid fa-calendar-alt',
+      icon:'fa-solid fa-question-circle',
       name: 'Preguntas',
+     },
+
+     {
+      number: '13',
+      ruta:'opciones',
+      icon: 'fa-solid fa-cogs',
+      name:'Opciones',
      }
+
 
   ];
 

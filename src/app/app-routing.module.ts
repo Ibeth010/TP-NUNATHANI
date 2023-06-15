@@ -30,6 +30,8 @@ import { InformeComponent } from './component/informe/informe.component';
 import { InformeInsertarComponent } from './component/informe/informe-insertar/informe-insertar.component';
 import { PreguntaComponent } from './component/pregunta/pregunta.component';
 import { PreguntaInsertarComponent } from './component/pregunta/pregunta-insertar/pregunta-insertar.component';
+import { OpcionComponent } from './component/opcion/opcion.component';
+import { OpcionInsertarComponent } from './component/opcion/opcion-insertar/opcion-insertar.component';
 
 const routes: Routes = [
   {
@@ -132,6 +134,15 @@ const routes: Routes = [
     children: [
       {path: 'informesinsertar', component: InformeInsertarComponent},
       {path: 'edicion/:id', component: InformeInsertarComponent},
+    ],
+  },
+  {
+    path: 'opciones',
+    component: OpcionComponent
+    ,
+    children: [
+      {path: 'opcionesinsertar', component: OpcionInsertarComponent},
+      {path: 'edicion/:id', component: OpcionInsertarComponent},
     ],
   },
   
