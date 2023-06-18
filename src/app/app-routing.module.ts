@@ -32,6 +32,8 @@ import { PreguntaComponent } from './component/pregunta/pregunta.component';
 import { PreguntaInsertarComponent } from './component/pregunta/pregunta-insertar/pregunta-insertar.component';
 import { OpcionComponent } from './component/opcion/opcion.component';
 import { OpcionInsertarComponent } from './component/opcion/opcion-insertar/opcion-insertar.component';
+import { SideNavComponent } from './component/side-nav/side-nav.component';
+import { LoginComponent } from './component/login/login.component';
 
 const routes: Routes = [
   {
@@ -144,6 +146,16 @@ const routes: Routes = [
       {path: 'opcionesinsertar', component: OpcionInsertarComponent},
       {path: 'edicion/:id', component: OpcionInsertarComponent},
     ],
+  },
+  {
+    path: 'side-nav', component:SideNavComponent
+  },
+  {
+    path: '',
+    redirectTo: 'login', pathMatch: 'full'
+  },
+  {
+    path: 'login', component: LoginComponent
   },
   
 ];

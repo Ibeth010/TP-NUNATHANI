@@ -21,6 +21,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { SideNavComponent } from './component/side-nav/side-nav.component';
 import { HeaderComponent } from './component/header/header.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 import { EstadoDialogoComponent } from './component/estado/estado-listar/estado-dialogo/estado-dialogo.component';
 import { EstadoInsertarComponent } from './component/estado/estado-insertar/estado-insertar.component'
@@ -76,6 +79,7 @@ import { OpcionComponent } from './component/opcion/opcion.component';
 import { OpcionListarComponent } from './component/opcion/opcion-listar/opcion-listar.component';
 import { OpcionInsertarComponent } from './component/opcion/opcion-insertar/opcion-insertar.component';
 import { OpcionDialogoComponent } from './component/opcion/opcion-listar/opcion-dialogo/opcion-dialogo.component';
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
   declarations: [
@@ -143,6 +147,8 @@ import { OpcionDialogoComponent } from './component/opcion/opcion-listar/opcion-
     OpcionListarComponent,
     OpcionInsertarComponent,
     OpcionDialogoComponent,
+    LoginComponent,
+    
 
 
   ],
@@ -162,6 +168,8 @@ import { OpcionDialogoComponent } from './component/opcion/opcion-listar/opcion-
     MatDialogModule,
     MatIconModule,
     MatPaginatorModule,
+    MatToolbarModule,
+    MatSnackBarModule,
 
 
   ],

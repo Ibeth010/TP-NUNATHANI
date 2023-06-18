@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -16,10 +16,18 @@ export class UsuarioService {
   constructor(private http:HttpClient) { }
   
   list(){
-    return this.http.get<Usuario[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Usuario[]>(this.url,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+
+
   }
   insert(usuario:Usuario){
-    return this.http.post(this.url, usuario);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, usuario, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   setList(listaNueva:Usuario[]){
@@ -29,14 +37,22 @@ export class UsuarioService {
     return this.listaCambio.asObservable();
   }
   listId(id: number) {
-    return this.http.get<Usuario>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Usuario>(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   update(U: Usuario) {
-    return this.http.put(this.url + '/' + U.idusuario, U);
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url + '/' + U.idusuario, U, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   eliminar(id: number) {
-
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();
