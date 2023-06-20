@@ -20,8 +20,7 @@ export class UsuarioListarComponent implements OnInit {
   private idMayor: number = 0;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-
-    constructor(private uS:UsuarioService, private dialog: MatDialog,private ls:LoginService){}
+  constructor(private uS:UsuarioService, private dialog: MatDialog,private ls:LoginService){}
   ngOnInit(): void {
     this.role=this.ls.showRole();
     console.log(this.role);

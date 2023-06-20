@@ -88,15 +88,27 @@ export class SideNavComponent implements OnInit{
       ruta:'opciones',
       icon: 'fa-solid fa-cogs',
       name:'Opciones',
+     },
+     {
+      number: '14',
+      ruta: 'login',
+      icon: 'fas fa-times',
+      name: 'Logout',
      }
-
 
   ];
 
   constructor(){
   }
   ngOnInit():void{}
-
+  handleClick(item: any) {
+    if (item.ruta === 'login') {
+      this.cerrar();
+    }
+  }
+  cerrar() {
+    sessionStorage.clear();
+  }
 }
 
 
