@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Test } from 'src/app/model/test';
 import { TestService } from 'src/app/service/test.service';
 import { TestDialogoComponent } from './test-dialogo/test-dialogo.component';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-test-listar',
@@ -12,6 +13,7 @@ import { TestDialogoComponent } from './test-dialogo/test-dialogo.component';
   styleUrls: ['./test-listar.component.css']
 })
 export class TestListarComponent implements OnInit{
+  role:string="";
   lista: Test[] = [];
   dataSource: MatTableDataSource<Test> = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'fecha', 'paciente', 'ceditar']
@@ -19,9 +21,11 @@ export class TestListarComponent implements OnInit{
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private tS: TestService, private dialog: MatDialog) {
+  constructor(private tS: TestService, private dialog: MatDialog, private ls:LoginService) {
   }
   ngOnInit(): void {
+    this.role=this.ls.showRole();
+    console.log(this.role);
     this.tS.list().subscribe((data)=>{ 
       this.dataSource=new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;

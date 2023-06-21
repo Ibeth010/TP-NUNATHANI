@@ -9,7 +9,7 @@
 
 </head>
 
-<body [hidden]="role=='USER'">
+<body>
 
   <div class="container">
     <div style="text-align: center;">
@@ -21,7 +21,7 @@
         <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
       </mat-form-field>
 
-      <div style="text-align: right;" class="example-button-row">
+      <div style="text-align: right;" class="example-button-row" [hidden]="role=='PSICOLOGO'">
         <button mat-raised-button color="warn" routerLink="/paciente/paciente-insertar">Nuevo</button>
 
       </div>
@@ -59,8 +59,8 @@
 
       
         <ng-container matColumnDef="ceditar">
-          <th mat-header-cell [hidden]="role=='USER'" *matHeaderCellDef style="text-align: center;"> Acciones </th>
-          <td mat-cell [hidden]="role=='USER'" *matCellDef="let element" style="text-align: center; height: 100;">
+          <th mat-header-cell [hidden]="role=='PSICOLOGO'" *matHeaderCellDef style="text-align: center;"> Acciones </th>
+          <td mat-cell [hidden]="role=='PSICOLOGO'" *matCellDef="let element" style="text-align: center; height: 100;">
             <button mat-icon-button class="custom-button" [routerLink]="['edicion', element.idpaciente]">
               <mat-icon>edit</mat-icon>
             </button>
@@ -79,22 +79,6 @@
     <mat-paginator [pageSize]="5" [pageSizeOptions]="[3,5]"></mat-paginator>
   </div>
 
-</body>
-
-<body *ngIf="role=='USER'">
-  <style>
-    .warning-box {
-      width: 400px;
-      padding: 20px;
-      border: 1px solid #ff0000;
-      background-color: #ffe5e5;
-      color: #ff0000;
-      font-family: Arial, sans-serif;
-    }
-  </style>
-  <div class="warning-box">
-    <p>No tiene permiso para utilizar la siguiente entidad.</p>
-  </div>
 </body>
 
 </html>

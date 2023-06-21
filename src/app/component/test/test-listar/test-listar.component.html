@@ -9,7 +9,7 @@
 
 </head>
 
-<body>
+<body [hidden]="role=='PACIENTE'">
 
   <div class="container">
     <div style="text-align: center;">
@@ -20,7 +20,7 @@
       <mat-form-field style="flex: 1; margin-right: 16px;">
         <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
       </mat-form-field>
-      <div style="text-align: right;" class="example-button-row">
+      <div style="text-align: right;" class="example-button-row" [hidden]="role=='PSICOLOGO'">
         <button mat-raised-button color="warn" routerLink="/test/test-insertar">Nuevo</button>
 
       </div>
@@ -72,6 +72,22 @@
     <mat-paginator [pageSize]="3" [pageSizeOptions]="[]"></mat-paginator>
   </div>
 
+</body>
+
+<body *ngIf="role=='PACIENTE'">
+  <style>
+    .warning-box {
+      width: 400px;
+      padding: 20px;
+      border: 1px solid #ff0000;
+      background-color: #ffe5e5;
+      color: #ff0000;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+  <div class="warning-box">
+    <p>No tiene permiso para utilizar la siguiente entidad.</p>
+  </div>
 </body>
 
 </html>

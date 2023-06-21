@@ -24,9 +24,9 @@ export class CitaListarComponent implements OnInit{
     private ls:LoginService) {
   }
   ngOnInit(): void {
-    this.cS.list().subscribe(data => {
-      this.role=this.ls.showRole();
+    this.role=this.ls.showRole();
     console.log(this.role);
+    this.cS.list().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     })

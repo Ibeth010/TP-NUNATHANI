@@ -23,7 +23,7 @@ export class AppComponent {
     return this.loginService.verificar();
   }
   validarRol(){
-    if(this.role=='ADMIN' || this.role=='USER' || this.role== 'PSICOLOGO'){
+    if(this.role=='ADMIN' || this.role=='PACIENTE' || this.role== 'PSICOLOGO'){
       return true;
     }else{
       return false;

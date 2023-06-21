@@ -1,4 +1,5 @@
 import { Component,Input, OnInit  } from '@angular/core';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -6,6 +7,7 @@ import { Component,Input, OnInit  } from '@angular/core';
   styleUrls: ['./side-nav.component.css']
 })
 export class SideNavComponent implements OnInit{
+  role:string="";
   @Input() sideNavStatus: boolean = false;
   list=[
     {
@@ -97,10 +99,13 @@ export class SideNavComponent implements OnInit{
      }
 
   ];
-
-  constructor(){
+  
+  constructor(private ls:LoginService){
   }
-  ngOnInit():void{}
+  ngOnInit():void{
+    this.role=this.ls.showRole();
+    console.log(this.role);
+  }
   handleClick(item: any) {
     if (item.ruta === 'login') {
       this.cerrar();
@@ -109,6 +114,17 @@ export class SideNavComponent implements OnInit{
   cerrar() {
     sessionStorage.clear();
   }
+  shouldHideItem(item: any): boolean {
+    if (this.role === 'PACIENTE') {
+      return item.ruta === 'estados' || item.ruta === 'test' || item.ruta === 'preguntas';
+    } else if (this.role === 'PSICOLOGO') {
+      return item.ruta === 'opciones';
+    } else {
+      return false; // No ocultar ningún otro elemento para roles distintos de 'PACIENTE' y 'PSICOLOGO'
+    }
+  }
+  
+
 }
 
 

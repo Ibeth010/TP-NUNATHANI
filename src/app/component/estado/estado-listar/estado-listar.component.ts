@@ -27,9 +27,9 @@ export class EstadoListarComponent implements OnInit {
     private dialog:MatDialog,
     private ls:LoginService) {}
   ngOnInit(): void {
-    this.rS.list().subscribe((data) => {
-      this.role=this.ls.showRole();
+    this.role=this.ls.showRole();
     console.log(this.role);
+    this.rS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });

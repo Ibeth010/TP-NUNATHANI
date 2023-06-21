@@ -5,21 +5,25 @@ import { PreguntaDialogoComponent } from './pregunta-dialogo/pregunta-dialogo.co
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog'
 import { MatPaginator } from "@angular/material/paginator";
+import { LoginService } from 'src/app/service/login.service';
 @Component({
   selector: 'app-pregunta-listar',
   templateUrl: './pregunta-listar.component.html',
   styleUrls: ['./pregunta-listar.component.css']
 })
 export class PreguntaListarComponent implements OnInit{
+  role:string="";
   lista: Pregunta[] = [];
   dataSource: MatTableDataSource<Pregunta> = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'txtPregunta', 'test', 'ceditar']
   private idMayor: number = 0;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private pS: PreguntaService, private dialog: MatDialog) {
+  constructor(private pS: PreguntaService, private dialog: MatDialog, private ls:LoginService) {
   }
   ngOnInit(): void {
+    this.role=this.ls.showRole();
+    console.log(this.role);
     this.pS.list().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
