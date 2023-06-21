@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -13,10 +13,16 @@ export class Rutinas_recreativasService {
   private confirmaEliminacion = new Subject<Boolean>();
   constructor(private http: HttpClient) { }
   list(){
-    return this.http.get<Rutinas_recreativas[ ]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Rutinas_recreativas[ ]>(this.url,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   insert(Rutinas_recreativas: Rutinas_recreativas) {
-    return this.http.post(this.url, Rutinas_recreativas);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, Rutinas_recreativas,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   getList() {
     return this.listaCambio.asObservable();
@@ -25,10 +31,14 @@ export class Rutinas_recreativasService {
     this.listaCambio.next(listaNueva);
   }
   listId(id: number) {
+    let token = sessionStorage.getItem("token");
     return this.http.get<Rutinas_recreativas>(`${this.url}/${id}`);
   }
   update(d: Rutinas_recreativas) {
-    return this.http.put(this.url + '/' + d.id, d);
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url + '/' + d.id, d,{ //REVISAR 
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   getLista() {
     return this.listaCambio.asObservable();
@@ -37,8 +47,10 @@ export class Rutinas_recreativasService {
     return this.http.put(this.url + "/" + rutinas_recreativas.id, rutinas_recreativas);
   }
   eliminar(id: number) {
-
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();

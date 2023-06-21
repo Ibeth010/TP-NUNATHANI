@@ -4,12 +4,14 @@ import { Rutinas_recreativasService } from 'src/app/service/rutinas_recreativas.
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog'
 import { Rutinas_recreativasDialogoComponent } from './rutinas-recreativas-dialogo/rutinas-recreativas-dialogo.component';
+import { LoginService } from 'src/app/service/login.service';
 @Component({
   selector: 'app-rutinas_recreativas-listar',
   templateUrl: './rutinas_recreativas-listar.component.html',
   styleUrls: ['./rutinas_recreativas-listar.component.css'],
 })
 export class Rutinas_recreativasListarComponent implements OnInit {
+  role:string="";
   dataSource: MatTableDataSource<Rutinas_recreativas> = new MatTableDataSource();
   lista: Rutinas_recreativas[] = [];
   displayedColumns: string[] = [
@@ -19,8 +21,12 @@ export class Rutinas_recreativasListarComponent implements OnInit {
     'ceditar',
   ];
   private idMayor:number=0;
-  constructor(private rS: Rutinas_recreativasService, private dialog: MatDialog) {}
+  constructor(private rS: Rutinas_recreativasService, 
+    private dialog: MatDialog,  private ls:LoginService) {}
+
   ngOnInit(): void {
+    this.role=this.ls.showRole();
+    console.log(this.role);
     this.rS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
     });

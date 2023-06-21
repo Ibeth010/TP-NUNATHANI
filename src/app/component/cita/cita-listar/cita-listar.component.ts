@@ -5,23 +5,28 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog'
 import { CitaDialogoComponent } from './cita-dialogo/cita-dialogo.component';
 import { MatPaginator } from "@angular/material/paginator";
-
+import { LoginService } from 'src/app/service/login.service';
 @Component({
   selector: 'app-cita-listar',
   templateUrl: './cita-listar.component.html',
   styleUrls: ['./cita-listar.component.css']
 })
 export class CitaListarComponent implements OnInit{
+  role:string="";
   lista: Cita[] = [];
   dataSource: MatTableDataSource<Cita> = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'fecha', 'estado','ceditar']
   private idMayor: number = 0;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private cS: CitaService, private dialog: MatDialog) {
+  constructor(private cS: CitaService, 
+    private dialog: MatDialog,
+    private ls:LoginService) {
   }
   ngOnInit(): void {
     this.cS.list().subscribe(data => {
+      this.role=this.ls.showRole();
+    console.log(this.role);
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     })

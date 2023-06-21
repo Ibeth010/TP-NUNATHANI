@@ -5,12 +5,15 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog'
 import { MatPaginator } from "@angular/material/paginator";
 import { EstadoDialogoComponent } from './estado-dialogo/estado-dialogo.component';
+import { LoginService } from 'src/app/service/login.service';
+
 @Component({
   selector: 'app-estado-listar',
   templateUrl: './estado-listar.component.html',
   styleUrls: ['./estado-listar.component.css'],
 })
 export class EstadoListarComponent implements OnInit {
+  role:string="";
   dataSource: MatTableDataSource<Estado> = new MatTableDataSource();
   lista: Estado[] = [];
   displayedColumns: string[] = [
@@ -20,9 +23,13 @@ export class EstadoListarComponent implements OnInit {
   ];
   private idMayor: number = 0;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  constructor(private rS: EstadoService, private dialog:MatDialog) {}
+  constructor(private rS: EstadoService, 
+    private dialog:MatDialog,
+    private ls:LoginService) {}
   ngOnInit(): void {
     this.rS.list().subscribe((data) => {
+      this.role=this.ls.showRole();
+    console.log(this.role);
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });

@@ -21,7 +21,8 @@ export class PsicologoListarComponent implements OnInit {
   displayedColumns: string[] = ['id', 'correo', 'foto', 'tipoEspecialidad','usuario','disponible','ceditar']
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   private idMayor:number = 0;
-  constructor(private pS: PsicologoService, private dialog: MatDialog, private ls:LoginService) {
+  constructor(private pS: PsicologoService, private dialog: MatDialog,
+     private ls:LoginService) {
   }
 
   ngOnInit(): void {
