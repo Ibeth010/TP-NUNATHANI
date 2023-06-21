@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -16,10 +16,16 @@ export class EspecialidadService {
 
   constructor(private http:HttpClient) { }
   list(){
-  return this.http.get<Especialidad[]>(this.url);
+    let token = sessionStorage.getItem("token");
+  return this.http.get<Especialidad[]>(this.url,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
   }
   insert(especialidad: Especialidad) {
-    return this.http.post(this.url, especialidad);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, especialidad, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   getList() {
@@ -29,14 +35,23 @@ export class EspecialidadService {
     this.listaCambio.next(listaNueva);
   }
   listId(id: number) {
-    return this.http.get<Especialidad>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Especialidad>(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
  
   update(e: Especialidad) {
-    return this.http.put(this.url, e);
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url, e, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   eliminar(id:number){
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
 
   }
   getConfirmarEliminacion(){

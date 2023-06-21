@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Psicologo } from '../model/psicologo';
 import { environment } from 'src/environments/environment';
@@ -18,10 +18,16 @@ export class PsicologoService {
 
   constructor(private http: HttpClient) { }
   list() {
-    return this.http.get<Psicologo[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Psicologo[]>(this.url,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   insert(psicologo: Psicologo) {
-    return this.http.post(this.url, psicologo);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, psicologo, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
  
   getList() {
@@ -29,17 +35,26 @@ export class PsicologoService {
   }
 
   listId(id: number) {
-    return this.http.get<Psicologo>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Psicologo>(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   setList(listaNueva: Psicologo[]) {
     this.listaCambio.next(listaNueva);
   }
 
   update(e: Psicologo) {
-    return this.http.put(this.url, e);
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url, e, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   eliminar(id:number){
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   getConfirmarEliminacion(){
     return this.confirmarEliminacion.asObservable();

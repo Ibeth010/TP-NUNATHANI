@@ -5,6 +5,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Psicologo } from 'src/app/model/psicologo';
 import { PsicologoService } from 'src/app/service/psicologo.service';
 import { PsicologoDialogoComponent } from './psicologo-dialogo/psicologo-dialogo.component';
+import { LoginService } from 'src/app/service/login.service';
+
 
 
 @Component({
@@ -13,16 +15,18 @@ import { PsicologoDialogoComponent } from './psicologo-dialogo/psicologo-dialogo
   styleUrls: ['./psicologo-listar.component.css']
 })
 export class PsicologoListarComponent implements OnInit {
-
+  role:string="";
   lista: Psicologo[] = [];
   dataSource: MatTableDataSource<Psicologo> = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'correo', 'foto', 'tipoEspecialidad','usuario','disponible','ceditar']
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   private idMayor:number = 0;
-  constructor(private pS: PsicologoService, private dialog: MatDialog) {
+  constructor(private pS: PsicologoService, private dialog: MatDialog, private ls:LoginService) {
   }
 
   ngOnInit(): void {
+    this.role=this.ls.showRole();
+    console.log(this.role);
     this.pS.list().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
