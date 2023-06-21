@@ -5,6 +5,7 @@ import { MatPaginator } from "@angular/material/paginator";
 import { Opcion } from 'src/app/model/opcion';
 import { OpcionDialogoComponent } from './opcion-dialogo/opcion-dialogo.component';
 import { OpcionService } from 'src/app/service/opcion.service';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-opcion-listar',
@@ -12,20 +13,23 @@ import { OpcionService } from 'src/app/service/opcion.service';
   styleUrls: ['./opcion-listar.component.css']
 })
 export class OpcionListarComponent implements OnInit{
+  role:string="";
   lista: Opcion[] = [];
   dataSource: MatTableDataSource<Opcion> = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'pregunta','descripcionOpcion', 'ceditar']
   private idMayor: number = 0;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private oS: OpcionService, private dialog: MatDialog) {
-  }
+  constructor(private oS: OpcionService, private dialog: MatDialog,private ls:LoginService) {}
   ngOnInit(): void {
+    this.role=this.ls.showRole();
+    console.log(this.role);
     this.oS.list().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     })
     this.oS.getLista().subscribe(data => {
+      
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });

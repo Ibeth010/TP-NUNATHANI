@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -18,10 +18,16 @@ export class InformeService {
 
   constructor(private http: HttpClient) { }
   list(){
-    return this.http.get<Informe[ ]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Informe[ ]>(this.url,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   insert(informe: Informe) {
-    return this.http.post(this.url, informe);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, informe,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   getList() {
@@ -29,18 +35,26 @@ export class InformeService {
   }
 
   listId(id: number) {
-    return this.http.get<Informe>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Informe>(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   setList(listaNueva: Informe[]) {
     this.listaCambio.next(listaNueva);
   }
 
   update(i: Informe) {
-    return this.http.put(this.url, i);
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url, i,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   eliminar(id: number) {
-
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   getConfirmaEliminacion() {
     return this.confirmarEliminacion.asObservable();

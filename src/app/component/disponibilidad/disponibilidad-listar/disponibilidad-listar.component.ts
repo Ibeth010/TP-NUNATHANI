@@ -5,6 +5,7 @@ import { Disponibilidad } from 'src/app/model/disponibilidad';
 import { DisponibilidadService } from 'src/app/service/disponibilidad.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DisponibilidadDialogoComponent } from './disponibilidad-dialogo/disponibilidad-dialogo.component';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-disponibilidad-listar',
@@ -12,6 +13,7 @@ import { DisponibilidadDialogoComponent } from './disponibilidad-dialogo/disponi
   styleUrls: ['./disponibilidad-listar.component.css']
 })
 export class DisponibilidadListarComponent implements OnInit {
+  role:string="";
   dataSource: MatTableDataSource<Disponibilidad> = new MatTableDataSource();
 
   displayedColumns: string[] = ['idDisponibilidad','inicio_turno','fin_turno','dias_laborables','ceditar',
@@ -20,9 +22,11 @@ export class DisponibilidadListarComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator; //THIS
 
   private idMayor:number = 0;
-  constructor(private dS: DisponibilidadService, private dialog: MatDialog) {}
+  constructor(private dS: DisponibilidadService, private dialog: MatDialog,private ls:LoginService) {}
 
   ngOnInit(): void {
+    this.role=this.ls.showRole();
+    console.log(this.role);
     this.dS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator; //THIS

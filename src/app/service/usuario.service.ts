@@ -12,16 +12,12 @@ export class UsuarioService {
   private url=`${base_url}/usuarios`
   private listaCambio=new Subject<Usuario[]>();
   private confirmaEliminacion = new Subject<Boolean>()
-
   constructor(private http:HttpClient) { }
-  
   list(){
     let token = sessionStorage.getItem("token");
     return this.http.get<Usuario[]>(this.url,{
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
     });
-
-
   }
   insert(usuario:Usuario){
     let token = sessionStorage.getItem("token");
