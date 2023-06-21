@@ -1,11 +1,13 @@
-<div class="container-fluid g-0">
-  <app-header (sideNavToggled)="sideNavStatus = $event"> </app-header>
-  <main>
-    <app-side-nav
-      [sideNavStatus]="sideNavStatus" [ngClass]="{ 'app-side-nav-open': sideNavStatus }">
-    </app-side-nav>
-    <div class="display-area p-2" [ngClass]="{ 'display-area-shrink': sideNavStatus }">
-    <app-especialidad> </app-especialidad>
-  </div>
-  </main>
-</div>
+<p hidden>
+    <div class="container-fluid g-0" *ngIf="verificar()">
+        <app-header (sideNavToggled)="sideNavStatus = $event" *ngIf="validarRol()"> </app-header>
+        <main>
+          <app-side-nav
+            [sideNavStatus]="sideNavStatus" [ngClass]="{ 'app-side-nav-open': sideNavStatus }">
+          </app-side-nav>
+          <div class="display-area p-2" [ngClass]="{ 'display-area-shrink': sideNavStatus }">
+          <app-especialidad> </app-especialidad>
+        </div>
+        </main>
+    </div>
+<router-outlet></router-outlet>

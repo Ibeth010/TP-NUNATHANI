@@ -17,13 +17,13 @@ body {
 .container {
   width: 1000px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 40px;
   background-color: #ffffff;
 }
 
 /* Estilos para encabezados */
 h1 {
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
   color: #6d2b79;
   margin-top: 0;
@@ -54,11 +54,14 @@ a:hover {
   border: none;
   cursor: pointer;
   margin-bottom: 20px;
-
 }
 
 .mat-raised-button:hover {
   background-color: #c82333;
+}
+.example-button-row button {
+  background-color: black;
+  color: white;
 }
 
 .mat-icon-button {
@@ -95,7 +98,6 @@ a:hover {
 .mat-header-cell,
 .mat-cell {
   text-align: center;
-
 }
 
 .mat-header-row,

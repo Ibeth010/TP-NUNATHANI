@@ -34,7 +34,7 @@ export class SideNavComponent implements OnInit{
     },
     {
      number: '5',
-     ruta:'estado',
+     ruta:'estados',
      icon:'fa-solid  fa-users',
      name: 'Estado',
     },
@@ -47,14 +47,53 @@ export class SideNavComponent implements OnInit{
      {
       number: '7',
       ruta:'test',
-      icon:'fa-solid fa-book-open-reader',
+      icon:'fa-solid fa-clipboard-check',
       name:'Test',
      },
      {
       number: '8',
       ruta:'paciente',
-      icon:'fa-solid fa-book-open-reader',
+      icon:'fa-solid fa-user-injured',
       name:'Paciente',
+     },
+     {
+      number: '9',
+      ruta:'psicologo',
+      icon:'fa-solid fa-brain',
+      name:'Psicologo',
+     },
+
+     {
+      number: '10',
+      ruta:'informes',
+      icon:'fa-solid fa-chart-line',
+      name:'Informe',
+     },
+
+     {
+      number: '11',
+      ruta:'citas',
+      icon: 'fa-solid fa-calendar-alt',
+      name:'Citas',
+     },
+     {
+      number:'12',
+      ruta:'preguntas',
+      icon:'fa-solid fa-question-circle',
+      name: 'Preguntas',
+     },
+
+     {
+      number: '13',
+      ruta:'opciones',
+      icon: 'fa-solid fa-cogs',
+      name:'Opciones',
+     },
+     {
+      number: '14',
+      ruta: 'login',
+      icon: 'fas fa-times',
+      name: 'Logout',
      }
 
   ];
@@ -62,7 +101,14 @@ export class SideNavComponent implements OnInit{
   constructor(){
   }
   ngOnInit():void{}
-
+  handleClick(item: any) {
+    if (item.ruta === 'login') {
+      this.cerrar();
+    }
+  }
+  cerrar() {
+    sessionStorage.clear();
+  }
 }
 
 

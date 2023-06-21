@@ -13,12 +13,17 @@
     <div style=" text-align: center;">
       <h1>Lista de Psicologos</h1>
     </div>
-    <div style="text-align: right;" class="example-button-row">
-      <button mat-raised-button color="warn" routerLink="/psicologo/psicologosinsertar">Nuevo</button>
+    <link href="https://fonts.googleapis.com/css2?family=Bellota&display=swap" rel="stylesheet">
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <mat-form-field style="flex: 1; margin-right: 16px;">
+        <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
+      </mat-form-field>
+      
+      <div style="text-align: right;" class="example-button-row">
+        <button mat-raised-button color="black" routerLink="/psicologo/psicologosinsertar">Nuevo</button>
+      </div>
     </div>
-    <mat-form-field>
-      <input matInput (keyup)="filtrar($event)" placeholder="Buscar">
-    </mat-form-field>
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <ng-container matColumnDef="id">
@@ -46,7 +51,7 @@
       <!-- Weight Column -->
       <ng-container matColumnDef="usuario">
         <th mat-header-cell *matHeaderCellDef> usuario</th>
-        <td mat-cell *matCellDef="let element"> {{element.usuario.nameUsuario}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.usuario.nameusuario}} </td>
       </ng-container>
       <ng-container matColumnDef="disponible">
         <th mat-header-cell *matHeaderCellDef> Disponible</th>

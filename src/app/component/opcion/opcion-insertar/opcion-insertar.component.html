@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <ng-container>
+      <form [formGroup]="form" (submit)="aceptar()">
+        <h1> Ingresar datos de opciones</h1>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Código</mat-label>
+          <input matInput placeholder="Código" formControlName="idOpcion" readonly />
+        </mat-form-field>
+
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>Pregunta</mat-label>
+          <mat-select formControlName="txtPregunta" [(value)]="idPreguntaSelectionada" required>
+            <mat-option *ngFor="let p of lista" [value]="p.idPregunta">
+              {{p.txtPregunta}}
+          </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>Descripcion</mat-label>
+          <mat-select
+            placeholder="descripcion"
+            formControlName="descripcionOpcion"
+            required
+          >
+            <mat-option value="Totalmente de acuerdo">Totalmente de acuerdo</mat-option>
+            <mat-option value="De acuerdo">De acuerdo</mat-option>
+            <mat-option value="Ni a favor ni en contra">Ni a favor ni en contra</mat-option>
+            <mat-option value="En desacuerdo">En desacuerdo</mat-option>
+            <mat-option value="Totalmente en desacuerdo">Totalmente en desacuerdo</mat-option>
+          </mat-select>
+        </mat-form-field>
+         <br />
+
+          <br />
+        <div style="text-align: center">
+          <button mat-icon-button color="primary">
+            <mat-icon>check</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" routerLink="/opciones">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </div>
+
+        <br />
+        <p>{{ mensaje }}</p>
+      </form>
+    </ng-container>
+  </body>
+</html>

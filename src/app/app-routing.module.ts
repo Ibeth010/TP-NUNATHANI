@@ -17,18 +17,24 @@ import { Rutinas_recreativasInsertarComponent } from './component/rutinas_recrea
 import { Rutinas_recreativasComponent } from './component/rutinas_recreativas/rutinas_recreativas.component';
 import { TratamientoComponent } from './component/tratamiento/tratamiento.component';
 import { TratamientoInsertarComponent } from './component/tratamiento/tratamiento-insertar/tratamiento-insertar.component';
-<<<<<<< HEAD
 import { PacienteComponent } from './component/paciente/paciente.component';
 import { PacienteInsertarComponent } from './component/paciente/paciente-insertar/paciente-insertar.component';
 import { TestComponent } from './component/test/test.component';
 import { TestInsertarComponent } from './component/test/test-insertar/test-insertar.component';
 import { CitaComponent } from './component/cita/cita.component';
 import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
-=======
 import { PsicologoComponent } from './component/psicologo/psicologo.component';
 import { PsicologoInsertarComponent } from './component/psicologo/psicologo-insertar/psicologo-insertar.component';
 
->>>>>>> alexandra
+import { InformeComponent } from './component/informe/informe.component';
+import { InformeInsertarComponent } from './component/informe/informe-insertar/informe-insertar.component';
+import { PreguntaComponent } from './component/pregunta/pregunta.component';
+import { PreguntaInsertarComponent } from './component/pregunta/pregunta-insertar/pregunta-insertar.component';
+import { OpcionComponent } from './component/opcion/opcion.component';
+import { OpcionInsertarComponent } from './component/opcion/opcion-insertar/opcion-insertar.component';
+import { SideNavComponent } from './component/side-nav/side-nav.component';
+import { LoginComponent } from './component/login/login.component';
+
 const routes: Routes = [
   {
     path: 'especialidad',
@@ -53,6 +59,13 @@ const routes: Routes = [
     {path: 'edicion/:id',component:CitaInsertarComponent},
   ]
  },
+ {
+  path: 'preguntas',component: PreguntaComponent,children: [
+    {path: 'nuevo',component: PreguntaInsertarComponent},
+    {path: 'edicion/:id',component: PreguntaInsertarComponent},
+
+  ],
+},
   
   {
     path:'usuario',
@@ -116,6 +129,34 @@ const routes: Routes = [
     ],
   },
 
+  {
+    path: 'informes',
+    component: InformeComponent
+    ,
+    children: [
+      {path: 'informesinsertar', component: InformeInsertarComponent},
+      {path: 'edicion/:id', component: InformeInsertarComponent},
+    ],
+  },
+  {
+    path: 'opciones',
+    component: OpcionComponent
+    ,
+    children: [
+      {path: 'opcionesinsertar', component: OpcionInsertarComponent},
+      {path: 'edicion/:id', component: OpcionInsertarComponent},
+    ],
+  },
+  {
+    path: 'side-nav', component:SideNavComponent
+  },
+  {
+    path: '',
+    redirectTo: 'login', pathMatch: 'full'
+  },
+  {
+    path: 'login', component: LoginComponent
+  },
   
 ];
 

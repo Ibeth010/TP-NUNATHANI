@@ -54,7 +54,7 @@ export class PsicologoInsertarComponent implements OnInit{
       idPsicologo: new FormControl({value: '', disabled: true}),
       correoPsicologo: new FormControl(),
       fotoPsicologo: new FormControl(),
-      nameUsuario: new FormControl(),
+      nameusuario: new FormControl(),
       dias_laborales: new FormControl(),
       tipoEspecialidad: new FormControl()
     });
@@ -67,7 +67,7 @@ export class PsicologoInsertarComponent implements OnInit{
     this.psicologo.correoPsicologo = this.form.value['correoPsicologo'];
     this.psicologo.fotoPsicologo = this.form.value['fotoPsicologo'];
     this.psicologo.especialidad.tipoEspecialidad = this.form.value['tipoEspecialidad'];
-    this.psicologo.usuario.nameUsuario = this.form.value['nameUsuario'];
+    this.psicologo.usuario.nameusuario = this.form.value['nameusuario'];
     this.psicologo.disponibilidad.dias_laborables = this.form.value['dias_laborales'];
 
     if (this.form.status=="INVALID") {
@@ -81,7 +81,7 @@ export class PsicologoInsertarComponent implements OnInit{
       let c = new Disponibilidad();
 
       a.idEspecialidad = this.idSeleccionado;
-      b.id=this.idSeleccionadou;
+      b.idusuario=this.idSeleccionadou;
       c.idDisponibilidad=this.idSeleccionadod;
 
       this.psicologo.especialidad=a;
@@ -107,7 +107,7 @@ export class PsicologoInsertarComponent implements OnInit{
           correoPsicologo: new FormControl(data.correoPsicologo),
           fotoPsicologo: new FormControl(data.fotoPsicologo),
           tipoEspecialidad: new FormControl(data.especialidad.tipoEspecialidad),
-          nameUsuario: new FormControl(data.usuario.nameUsuario),
+          nameusuario: new FormControl(data.usuario.nameusuario),
           dias_laborales: new FormControl(data.disponibilidad.dias_laborables),
           
           

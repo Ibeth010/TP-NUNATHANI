@@ -18,8 +18,10 @@
         <mat-form-field style="flex: 1; margin-right: 16px;">
           <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
         </mat-form-field>
-
-        <button mat-raised-button color="warn" routerLink="/disponibilidad/disponibilidadesinsertar">Nuevo</button>
+        
+        <div style="text-align: right;" class="example-button-row">
+          <button mat-raised-button color="black" routerLink="/disponibilidad/disponibilidadesinsertar">Nuevo</button>
+        </div>
       </div>
 
 
@@ -65,7 +67,7 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
       </table>
 <br>
-      <mat-paginator [pageSize]="5" [pageSizeOptions]="[5]"></mat-paginator>
+      <mat-paginator [pageSize]="5" [pageSizeOptions]="[5,10,15]"></mat-paginator>
 
     </div>
   </body>

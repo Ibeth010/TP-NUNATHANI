@@ -18,7 +18,10 @@
           <input matInput (keyup)="filtrar($event)" placeholder="Buscar">
         </mat-form-field>
 
-        <button mat-raised-button color="warn" routerLink="/rutinas_recreativas/rutinas_recreativasinsertar">Nuevo</button>
+        <div style="text-align: right;" class="example-button-row">
+          <button mat-raised-button color="black" routerLink="/rutinas_recreativas/rutinas_recreativasinsertar">Nuevo</button>
+
+        </div>
       </div>
 
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >

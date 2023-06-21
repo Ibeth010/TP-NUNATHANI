@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+      
+      <form [formGroup]="form" (submit)="aceptar()">
+        <h1 class="mensaje">Ingrese datos de pregunta</h1>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Id</mat-label>
+        <input matInput placeholder="id" formControlName="idPregunta" readonly />
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Pregunta</mat-label>
+        <input matInput placeholder="txtPregunta" formControlName="txtPregunta" required>
+      </mat-form-field>
+      <br>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Id Test</mat-label>
+        <mat-select formControlName="test" [(value)]="idTestSelectionada" required>
+          <mat-option *ngFor="let t of lista" [value]="t.idtest">
+            {{t.idtest}} - {{ t.paciente.usuario.nameusuario }}
+        </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <br/>
+      <div style="text-align: center">
+        <button mat-icon-button color="primary">
+          <mat-icon>check</mat-icon>
+        </button>
+
+        <button mat-icon-button color="warn" routerLink="/citas">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      
+      </div>
+      <p>{{mensaje}}</p>
+      </form>
+  </div>
+</body>
+</html>
