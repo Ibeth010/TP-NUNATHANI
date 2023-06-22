@@ -80,6 +80,8 @@ import { OpcionListarComponent } from './component/opcion/opcion-listar/opcion-l
 import { OpcionInsertarComponent } from './component/opcion/opcion-insertar/opcion-insertar.component';
 import { OpcionDialogoComponent } from './component/opcion/opcion-listar/opcion-dialogo/opcion-dialogo.component';
 import { LoginComponent } from './component/login/login.component';
+import { ReportesComponent } from './component/reportes/reportes.component';
+import { ReporteTratamientoComponent } from './component/reportes/reporte-tratamiento/reporte-tratamiento.component';
 
 @NgModule({
   declarations: [
@@ -148,6 +150,8 @@ import { LoginComponent } from './component/login/login.component';
     OpcionInsertarComponent,
     OpcionDialogoComponent,
     LoginComponent,
+    ReportesComponent,
+    ReporteTratamientoComponent,
     
 
 

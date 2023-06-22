@@ -34,6 +34,8 @@ import { OpcionComponent } from './component/opcion/opcion.component';
 import { OpcionInsertarComponent } from './component/opcion/opcion-insertar/opcion-insertar.component';
 import { SideNavComponent } from './component/side-nav/side-nav.component';
 import { LoginComponent } from './component/login/login.component';
+import { ReportesComponent } from './component/reportes/reportes.component';
+import { ReporteTratamientoComponent } from './component/reportes/reporte-tratamiento/reporte-tratamiento.component';
 
 const routes: Routes = [
   {
@@ -158,6 +160,15 @@ const routes: Routes = [
     path: 'login', component: LoginComponent
   },
   
+  {
+    path: 'reportes',
+    component: ReportesComponent
+    ,
+    children: [
+      {path: 'rutina-count-tratamiento', component: ReporteTratamientoComponent},
+    ],
+  },
+
 ];
 
 @NgModule({

@@ -96,6 +96,12 @@ export class SideNavComponent implements OnInit{
       ruta: 'login',
       icon: 'fas fa-times',
       name: 'Logout',
+     },
+     {
+      number: '15',
+      ruta: 'reportes',
+      icon: 'fas fa-times',
+      name: 'Reporte',
      }
 
   ];

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 
 import { Tratamiento } from '../model/tratamiento';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { RutinaTratamientoDTO } from '../model/rutinaTratamientoDTO';
 
 const base_url = environment.base
 @Injectable({
@@ -58,5 +59,13 @@ export class TratamientoService {
     return this.http.delete(`${this.url}/${id}`,{
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
     });
+  }
+
+  getRutinaCountByTratamiento(): Observable<RutinaTratamientoDTO[]> {
+    let token = sessionStorage.getItem("token");
+    return this.http.get<RutinaTratamientoDTO[]>(`${this.url}/rutina-count`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+    
   }
 }
