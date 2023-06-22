@@ -96,6 +96,8 @@ export class PsicologoInsertarComponent implements OnInit{
 
       this.router.navigate(['psicologo']);
 
+  }else{
+    this.mensaje= "Seleccione los campos requeridos"
   }
 
   }

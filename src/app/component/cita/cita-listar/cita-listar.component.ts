@@ -15,7 +15,7 @@ export class CitaListarComponent implements OnInit{
   role:string="";
   lista: Cita[] = [];
   dataSource: MatTableDataSource<Cita> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'fecha', 'estado','ceditar']
+  displayedColumns: string[] = ['id', 'fecha', 'estado','psicologo','paciente','ceditar']
   private idMayor: number = 0;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 

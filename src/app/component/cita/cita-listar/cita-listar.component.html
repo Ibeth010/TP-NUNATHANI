@@ -41,6 +41,14 @@
         <th mat-header-cell *matHeaderCellDef> Estado </th>
         <td mat-cell *matCellDef="let element"> {{element.estado.dispEstado}} </td>
       </ng-container>
+      <ng-container matColumnDef="psicologo">
+        <th mat-header-cell *matHeaderCellDef> Espec. psicologo </th>
+        <td mat-cell *matCellDef="let element"> {{element.psicologo.especialidad.tipoEspecialidad}} </td>
+      </ng-container>
+      <ng-container matColumnDef="paciente">
+        <th mat-header-cell *matHeaderCellDef> Paciente </th>
+        <td mat-cell *matCellDef="let element"> {{element.paciente.usuario.nameusuario}} </td>
+      </ng-container>
 
       <ng-container matColumnDef="ceditar">
         <th mat-header-cell *matHeaderCellDef style="text-align: center;">Acciones</th>

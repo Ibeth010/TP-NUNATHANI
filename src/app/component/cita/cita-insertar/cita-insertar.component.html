@@ -27,14 +27,31 @@
         </mat-form-field>
       <br>
       <mat-form-field appearance="fill">
-        <mat-label>Id Estado</mat-label>
+        <mat-label>Id Tipo estado</mat-label>
         <mat-select formControlName="estado" [(value)]="idEstadoSelectionado" required>
           <mat-option *ngFor="let e of lista" [value]="e.idEstado">
             {{e.idEstado}} - {{ e.dispEstado }}
         </mat-option>
         </mat-select>
       </mat-form-field>
-
+      <br/>
+      <mat-form-field appearance="fill">
+        <mat-label>Especiadad psicologo</mat-label>
+        <mat-select formControlName="psicologo" [(value)]="idPsicologoSeleccionado" required>
+          <mat-option *ngFor="let ps of listaPsico" [value]="ps.idPsicologo">
+            {{ps.especialidad.tipoEspecialidad}}
+        </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br/>
+      <mat-form-field appearance="fill">
+        <mat-label>Paciente</mat-label>
+        <mat-select formControlName="paciente" [(value)]="idPacienteSeleccionado" required>
+          <mat-option *ngFor="let pa of listaPaci" [value]="pa.idpaciente">
+            {{pa.usuario.nameusuario}}
+        </mat-option>
+        </mat-select>
+      </mat-form-field>
       <br/>
       <div style="text-align: center">
         <button mat-icon-button color="primary">
