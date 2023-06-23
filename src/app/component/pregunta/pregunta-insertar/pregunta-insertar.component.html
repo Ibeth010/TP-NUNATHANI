@@ -26,7 +26,7 @@
       <br>
       <br>
       <mat-form-field appearance="fill">
-        <mat-label>Id Test</mat-label>
+        <mat-label>IdTest-Paciente</mat-label>
         <mat-select formControlName="test" [(value)]="idTestSelectionada" required>
           <mat-option *ngFor="let t of lista" [value]="t.idtest">
             {{t.idtest}} - {{ t.paciente.usuario.nameusuario }}

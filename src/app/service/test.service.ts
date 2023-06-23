@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Subject } from 'rxjs';
+import { Subject,Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Test } from '../model/test';
+import { PreguntaTestDTO } from '../model/PreguntaTestDTO';
 const base_url = environment.base
 @Injectable({
   providedIn: 'root'
@@ -55,4 +56,12 @@ export class TestService {
     headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
   });
  }
+
+ getPreguntaCountByTest(): Observable<PreguntaTestDTO[]> {
+  let token = sessionStorage.getItem("token");
+  return this.http.get<PreguntaTestDTO[]>(`${this.url}/pregunta-count`,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+  
+}
 }

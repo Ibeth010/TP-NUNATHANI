@@ -38,8 +38,8 @@
         <td mat-cell *matCellDef="let element"> {{element.txtPregunta}} </td>
       </ng-container>
       <ng-container matColumnDef="test">
-        <th mat-header-cell *matHeaderCellDef> Paciente </th>
-        <td mat-cell *matCellDef="let element"> {{element.test.paciente.usuario.nameusuario}} </td>
+        <th mat-header-cell *matHeaderCellDef> IdTest-Paciente </th>
+        <td mat-cell *matCellDef="let element"> {{element.test.idtest}}-{{element.test.paciente.usuario.nameusuario}} </td>
       </ng-container>
 
       <ng-container matColumnDef="ceditar">

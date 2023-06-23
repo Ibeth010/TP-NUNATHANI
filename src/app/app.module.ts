@@ -83,6 +83,7 @@ import { LoginComponent } from './component/login/login.component';
 import { ReportesComponent } from './component/reportes/reportes.component';
 import { ReporteTratamientoComponent } from './component/reportes/reporte-tratamiento/reporte-tratamiento.component';
 import { ReportefechasPacienteComponent } from './component/reportes/reportefechas-paciente/reportefechas-paciente.component';
+import { ReporteTestComponent } from './component/reportes/reporte-test/reporte-test.component';
 
 @NgModule({
   declarations: [
@@ -154,6 +155,7 @@ import { ReportefechasPacienteComponent } from './component/reportes/reportefech
     ReportesComponent,
     ReporteTratamientoComponent,
     ReportefechasPacienteComponent,
+    ReporteTestComponent,
     
 
 
