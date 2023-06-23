@@ -21,7 +21,7 @@
           <mat-label>Paciente</mat-label>
           <mat-select formControlName="paciente" [(value)]="idpacienteseleccionado" required>
             <mat-option *ngFor="let p of lista" [value]="p.idpaciente">
-              {{p.correopaciente}}
+              {{p.usuario.nameusuario}}
             </mat-option>
           </mat-select>
         </mat-form-field>

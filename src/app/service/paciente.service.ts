@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Paciente } from '../model/paciente';
+import { PacienteUsuarioDTO } from '../model/PacienteUsuarioDTO';
 const base_url = environment.base
 
 @Injectable({
@@ -53,6 +54,12 @@ export class PacienteService {
  eliminar(id: number) {
   let token = sessionStorage.getItem("token");
    return this.http.delete(`${this.url}/${id}`,{
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+ }
+ getnombresynacimientos(): Observable<PacienteUsuarioDTO[]> {
+  let token = sessionStorage.getItem("token");
+  return this.http.get<PacienteUsuarioDTO[]>(`${this.url}/paciente-count`,{
     headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
   });
  }

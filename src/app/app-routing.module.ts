@@ -36,6 +36,7 @@ import { SideNavComponent } from './component/side-nav/side-nav.component';
 import { LoginComponent } from './component/login/login.component';
 import { ReportesComponent } from './component/reportes/reportes.component';
 import { ReporteTratamientoComponent } from './component/reportes/reporte-tratamiento/reporte-tratamiento.component';
+import { ReportefechasPacienteComponent } from './component/reportes/reportefechas-paciente/reportefechas-paciente.component';
 
 const routes: Routes = [
   {
@@ -166,6 +167,7 @@ const routes: Routes = [
     ,
     children: [
       {path: 'rutina-count-tratamiento', component: ReporteTratamientoComponent},
+      {path: 'nombre-fecha', component: ReportefechasPacienteComponent},
     ],
   },
 

@@ -82,6 +82,7 @@ import { OpcionDialogoComponent } from './component/opcion/opcion-listar/opcion-
 import { LoginComponent } from './component/login/login.component';
 import { ReportesComponent } from './component/reportes/reportes.component';
 import { ReporteTratamientoComponent } from './component/reportes/reporte-tratamiento/reporte-tratamiento.component';
+import { ReportefechasPacienteComponent } from './component/reportes/reportefechas-paciente/reportefechas-paciente.component';
 
 @NgModule({
   declarations: [
@@ -152,6 +153,7 @@ import { ReporteTratamientoComponent } from './component/reportes/reporte-tratam
     LoginComponent,
     ReportesComponent,
     ReporteTratamientoComponent,
+    ReportefechasPacienteComponent,
     
 
 
