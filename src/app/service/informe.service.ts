@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject,Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Informe } from '../model/informe';
-
+import { InformeTratamientoDTO } from '../model/InformeTratamientoDTO';
 const base_url = environment.base
 
 @Injectable({
@@ -62,4 +62,10 @@ export class InformeService {
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmarEliminacion.next(estado);
   }
+  getTratamientoCountByInforme(): Observable<InformeTratamientoDTO[]> {
+    let token = sessionStorage.getItem("token");
+    return this.http.get<InformeTratamientoDTO[]>(`${this.url}/tratamiento-count`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+}
 }
