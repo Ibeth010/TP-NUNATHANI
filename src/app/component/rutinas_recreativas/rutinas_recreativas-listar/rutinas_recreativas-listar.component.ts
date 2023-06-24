@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { Rutinas_recreativas } from 'src/app/model/rutinas_recreativas';
 import { Rutinas_recreativasService } from 'src/app/service/rutinas_recreativas.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog'
 import { Rutinas_recreativasDialogoComponent } from './rutinas-recreativas-dialogo/rutinas-recreativas-dialogo.component';
 import { LoginService } from 'src/app/service/login.service';
+import { MatPaginator } from '@angular/material/paginator';
+
 @Component({
   selector: 'app-rutinas_recreativas-listar',
   templateUrl: './rutinas_recreativas-listar.component.html',
@@ -21,6 +23,8 @@ export class Rutinas_recreativasListarComponent implements OnInit {
     'ceditar',
   ];
   private idMayor:number=0;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   constructor(private rS: Rutinas_recreativasService, 
     private dialog: MatDialog,  private ls:LoginService) {}
 
@@ -29,12 +33,18 @@ export class Rutinas_recreativasListarComponent implements OnInit {
     console.log(this.role);
     this.rS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
+
     });
     this.rS.getList().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
+
     });
     this.rS.getConfirmaEliminacion().subscribe(data => {
       data == true ? this.eliminar(this.idMayor) : false;
+      this.dataSource.paginator = this.paginator;
+
     });
   }
 

@@ -55,7 +55,20 @@ a:hover {
   cursor: pointer;
   margin-bottom: 20px;
 }
+/* Estilos para los contenedores */
+.ng-container {
+  padding: 4px; /* Ajusta el padding según tus necesidades */
+}
 
+/* Estilos para las filas de la tabla */
+.mat-row {
+  height: 40px; /* Ajusta la altura según tus necesidades */
+}
+
+/* Estilos para las celdas de la tabla */
+.mat-cell {
+  padding: 4px; /* Ajusta el padding según tus necesidades */
+}
 .mat-raised-button:hover {
   background-color: #c82333;
 }

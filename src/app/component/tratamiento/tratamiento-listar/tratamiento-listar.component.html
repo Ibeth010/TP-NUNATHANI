@@ -14,12 +14,16 @@
     <div style=" text-align: center;">
       <h1>Lista de Tratamiento</h1>
     </div>
-    <div style="text-align: right;" class="example-button-row" [hidden]="role=='PACIENTE'">
-      <button mat-raised-button color="primary" routerLink="/tratamientos/tratamientosinsertar">Nuevo</button>
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <mat-form-field style="flex: 1; margin-right: 16px;">
+        <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
+      </mat-form-field>
+      <div style="text-align: right;" class="example-button-row" [hidden]="role=='PACIENTE'">
+        <button mat-raised-button color="primary" routerLink="/tratamientos/tratamientosinsertar">Nuevo</button>
+      </div>
     </div>
-    <mat-form-field>
-      <input matInput (keyup)="filtrar($event)" placeholder="Buscar">
-    </mat-form-field>
+
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <ng-container matColumnDef="id">

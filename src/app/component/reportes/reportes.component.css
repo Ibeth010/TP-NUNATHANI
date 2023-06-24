@@ -1,4 +1,6 @@
-button.mat-raised-button {
-    background-color: #8a2be2; /* Color lila */
-    color: white; /* Texto en color blanco */
-  }
+.custom-button {
+  background-color: rgb(140, 82, 143); /* Color morado personalizado */
+  color: #ffffff; /* Color blanco para el texto */
+  margin-bottom: 10px; /* Margen inferior para separar los botones */
+
+}

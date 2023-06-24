@@ -1,7 +1,10 @@
-<div>
+
+<body>
+
+  <div>
     <div class="container">
-      <h1>Pacientes</h1>
       <form [formGroup]="form">
+        <h1>Ingrese datos de pacientes</h1>
         <mat-form-field class="example-full-width">
           <mat-label>Id</mat-label>
           <input matInput placeholder="Id" formControlName="idpaciente" readonly>
@@ -32,11 +35,17 @@
         </mat-form-field>
   
         <br>
-        <button mat-raised-button color="primary" (click)="aceptar()" routerLink="/pacientes">Aceptar</button>
-  
-        <button mat-raised-button color="warn" routerLink="/paciente">Cancelar</button>
+
+        <div style="text-align: center">
+          <button mat-icon-button color="primary" class="purple-button">
+            <mat-icon>check</mat-icon>
+          </button>  
+          <button mat-icon-button color="warn" class="black-button"  routerLink="/paciente"><mat-icon>cancel</mat-icon></button>
+        </div>
+        
         <p>{{mensaje}}</p>
       </form>
     </div>
   </div>
   
+</body>

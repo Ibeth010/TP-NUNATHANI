@@ -1,6 +1,8 @@
-<mat-dialog-content>
-    <p>¿Està seguro de eliminar?</p>
-    <button mat-raised-button style="background:#1e878f; color: #fff;" (click)="confirmar(true)">Si</button>
-    <button mat-raised-button (click)="confirmar(false)">No</button>
-  </mat-dialog-content>
+<mat-dialog-content style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+  <p style="margin-bottom: 16px;">¿Está seguro de eliminar los datos de la lista?</p>
+  <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+      <button mat-raised-button [style.backgroundColor]="'#6c4675'" [style.color]="'white'" (click)="confirmar(true)" style="margin-right: 16px;">Sí</button>
+      <button mat-raised-button [style.backgroundColor]="'black'" [style.color]="'white'" (click)="confirmar(false)" style="margin-right: 16px;">No</button>
+  </div>
+</mat-dialog-content>
   

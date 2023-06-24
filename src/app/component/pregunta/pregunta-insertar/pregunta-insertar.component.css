@@ -59,14 +59,16 @@ body {
   .mat-raised-button:hover {
     background-color: #c82333;
   }
-  
-  .mat-icon-button {
-    cursor: pointer;
+  .purple-button {
+    background-color: purple !important;
+    color: white !important;
   }
-  
-  .mat-icon-button:hover {
-    background-color: #007bff;
+  .black-button {
+    background-color: black !important;
+    color: white !important;
+    
   }
+
   
   /* Estilos para formularios */
   .mat-form-field {

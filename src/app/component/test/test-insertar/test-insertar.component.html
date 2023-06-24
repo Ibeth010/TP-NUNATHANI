@@ -1,7 +1,19 @@
-<div>
-    <div class="container">
-      <h1>Test</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    
       <form [formGroup]="form">
+        <h1>Ingrese datos de Test</h1>
+
         <mat-form-field class="example-full-width">
           <mat-label>Id</mat-label>
           <input matInput placeholder="Id" formControlName="idtest">
@@ -11,7 +23,7 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Fecha</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="fechatest">
+          <input matInput [matDatepicker]="picker" formControlName="fechatest"required>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
@@ -27,11 +39,17 @@
         </mat-form-field>
   
         <br>
-        <button mat-raised-button color="primary" (click)="aceptar()" routerLink="/tests">Aceptar</button>
-  
-        <button mat-raised-button color="warn" routerLink="/test">Cancelar</button>
+        <div style="text-align: center">
+          <button mat-icon-button color="primary" class="purple-button">
+            <mat-icon>check</mat-icon>
+          </button>  
+          <button mat-icon-button color="warn" class="black-button"  routerLink="/test"><mat-icon>cancel</mat-icon></button>
+        </div>
+        
         <p>{{mensaje}}</p>
       </form>
     </div>
-  </div>
   
+  
+
+</body>

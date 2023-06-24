@@ -10,7 +10,7 @@
   <body>
     <ng-container>
       <form [formGroup]="form" (submit)="aceptar()">
-        <h1> Ingresar Datos</h1>
+        <h1> Ingresar datos de psicologo</h1>
 
         <mat-form-field class="example-full-width">
           <mat-label>Código</mat-label>
@@ -74,10 +74,10 @@
   
         <br />
         <div style="text-align: center">
-          <button mat-icon-button color="primary">
+          <button mat-icon-button color="primary" class="purple-button">
             <mat-icon>check</mat-icon>
           </button>
-          <button mat-icon-button color="warn" routerLink="/psicologo">
+          <button mat-icon-button color="warn" class="black-button" routerLink="/psicologo">
             <mat-icon>cancel</mat-icon>
           </button>
         </div>

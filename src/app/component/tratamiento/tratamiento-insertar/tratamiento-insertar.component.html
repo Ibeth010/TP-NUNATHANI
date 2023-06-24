@@ -20,14 +20,14 @@
 
       <mat-form-field class="example-full-width">
         <mat-label>Tema</mat-label>
-        <input matInput placeholder="Tema" formControlName="temaTratamiento" />
+        <input matInput placeholder="Tema" formControlName="temaTratamiento" required/>
       </mat-form-field>
 
       <br />
 
       <mat-form-field class="example-full-width">
         <mat-label>Descripcion</mat-label>
-        <input matInput placeholder="Descripcion" formControlName="descripcionTratamiento" />
+        <input matInput placeholder="Descripcion" formControlName="descripcionTratamiento" required/>
       </mat-form-field>
 
       <br />
@@ -44,10 +44,10 @@
       <br />
 
       <div style="text-align: center">
-        <button mat-icon-button color="primary">
+        <button mat-icon-button color="primary" class="purple-button">
           <mat-icon>check</mat-icon>
         </button>
-        <button mat-icon-button color="warn" routerLink="/rutinas_recreativas">
+        <button mat-icon-button color="warn" class="black-button" routerLink="/rutinas_recreativas">
           <mat-icon>cancel</mat-icon>
         </button>
         <br />

@@ -12,7 +12,15 @@ body {
     background-size: 20px 20px;
     background-position: 0 0, 10px 10px;
   }
-  
+  .purple-button {
+    background-color: purple !important;
+    color: white !important;
+  }
+  .black-button {
+    background-color: black !important;
+    color: white !important;
+    
+  }
   /* Estilos para un contenedor principal */
   .container {
     width: 1000px;

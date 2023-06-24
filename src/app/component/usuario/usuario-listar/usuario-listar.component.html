@@ -22,7 +22,10 @@
       </mat-form-field>
       
 
-      <button mat-raised-button color="warn" routerLink="/usuario/usuario-insertar">Nuevo</button>
+      <div style="text-align: right;" class="example-button-row" [hidden]="role=='PSICOLOGO'">
+        <button mat-raised-button color="warn" routerLink="/usuario/usuario-insertar">Nuevo</button>
+
+      </div>
     </div>
     
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -80,7 +83,7 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
     <br>
-    <mat-paginator [pageSize]="3" [pageSizeOptions]="[]"></mat-paginator>
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5,10,15]"></mat-paginator>
   </div>
 
 </body>

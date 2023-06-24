@@ -10,7 +10,7 @@
   <body>
     <form [formGroup]="form" (submit)="aceptar()">
 
-      <h1 class="mensaje">Ingrese datos de estado</h1>
+      <h1 class="mensaje">Ingrese dato de estado</h1>
 
       <mat-form-field class="example-full-width">
         <mat-label>Id</mat-label>
@@ -32,11 +32,11 @@
       <br/>
 
       <div style="text-align: center">
-        <button mat-icon-button color="primary">
+        <button mat-icon-button color="primary" class="purple-button">
           <mat-icon>check</mat-icon>
         </button>
 
-        <button mat-icon-button color="warn" routerLink="/estados">
+        <button mat-icon-button color="warn" class="black-button" routerLink="/estados">
           <mat-icon>cancel</mat-icon>
         </button>
         <br />

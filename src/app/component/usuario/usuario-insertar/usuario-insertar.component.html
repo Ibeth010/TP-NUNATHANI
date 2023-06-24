@@ -8,7 +8,7 @@
 </head>
 <body style="display:flex; justify-content:center; align-items:center;">
     <form [formGroup]="form" (submit)="aceptar()">
-        <h1>Ingresar Datos</h1>
+        <h1>Ingresar datos de usuario</h1>
         <mat-form-field class="example-full-width">
             <mat-label>Codigo</mat-label>
             <input  matInput placeholder="Id" formControlName="idusuario" readonly>
@@ -37,10 +37,10 @@
         </mat-form-field>
         <br />
         <div style="text-align: center">
-            <button mat-icon-button color="primary">
-              <mat-icon>check</mat-icon>
+          <button mat-icon-button color="primary" class="purple-button">
+            <mat-icon>check</mat-icon>
             </button>
-            <button mat-icon-button color="warn" routerLink="/usuario">
+            <button mat-icon-button color="warn" class="black-button" routerLink="/usuario">
               <mat-icon>cancel</mat-icon>
             </button>
           </div>

@@ -1,17 +1,21 @@
 <router-outlet></router-outlet>
-<div class="center-div">
-  <div class="tituTabla">
-    <h1 class="t-table">Inicio de sesión Backup</h1>
-    <mat-form-field class="example-full-width">
-      <mat-label>Usuario</mat-label>
-      <input matInput placeholder="Username" [(ngModel)]="username">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Password</mat-label>
-      <input type="password" matInput placeholder="Password" [(ngModel)]="password">
-    </mat-form-field>
-    <br>
-    <button mat-raised-button style="background:#1e878f" (click)="login()">Ingresar</button>
-   
+<body>
+  <div class="center-div">
+    <div class="tituTabla">
+      <h1 class="t-table" style="text-align: center;">Iniciar sesión</h1>
+  
+      <mat-form-field class="example-full-width" style="text-align: center;">
+        <mat-label>Usuario</mat-label>
+        <input matInput placeholder="Username" [(ngModel)]="username">
+      </mat-form-field>
+      <br/>
+      <mat-form-field class="example-full-width" style="text-align: center;">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput placeholder="Password" [(ngModel)]="password">
+      </mat-form-field>
+      <br>
+      <button mat-raised-button style="background: rgb(137, 60, 141); color: #ffffff;" (click)="login()">Ingresar</button>
+     
+    </div>
   </div>
-</div>
+</body>
