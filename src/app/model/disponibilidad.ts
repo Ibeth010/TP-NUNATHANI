@@ -1,6 +1,6 @@
 export class Disponibilidad {
   idDisponibilidad:number=0
-  inicio_turno:string= ""
-  fin_turno: string= ""
+  inicio_turno = new Date(Date.now())
+  fin_turno = new Date(Date.now())
   dias_laborables: string= ""
  }
