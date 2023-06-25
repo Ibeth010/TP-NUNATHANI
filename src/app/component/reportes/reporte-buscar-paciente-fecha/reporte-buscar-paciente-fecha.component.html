@@ -1,0 +1,63 @@
+<p>reporte-buscar-paciente-fecha works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div style="text-align: center;">
+      <h1>Busqueda fecha en citas</h1>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha de cita</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="fechaEnviar">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <button mat-button (click)="buscarPorFecha()">Buscar</button>
+
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Id </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.idCita}} </td>
+      </ng-container>
+      
+      <!-- Weight Column -->
+      <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Estado </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.estado.dispEstado}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="psicologo">
+        <th mat-header-cell *matHeaderCellDef> Psicologo </th>
+        <td mat-cell *matCellDef="let element"> {{element.psicologo.correoPsicologo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="paciente">
+        <th mat-header-cell *matHeaderCellDef> Paciente </th>
+        <td mat-cell *matCellDef="let element"> {{element.paciente.usuario.nameusuario}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <div style="text-align: center;" class="example-button-row">
+      <button mat-raised-button color="warn" routerLink="/citas">Volver a Cita</button>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Cita } from '../model/cita';
-import { Subject } from 'rxjs';
+import { Subject,Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Paciente } from '../model/paciente';
 
 const base_url = environment.base
 
@@ -60,4 +61,10 @@ export class CitaService {
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
   }
+  getbuscarBuscarFecha(fecha:Date): Observable<Cita[]> {
+    let token = sessionStorage.getItem("token");
+    return this.http.post<Cita[]>(`${this.url}/buscar`, fecha, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+   }
 }
