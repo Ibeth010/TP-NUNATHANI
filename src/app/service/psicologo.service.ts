@@ -2,7 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Psicologo } from '../model/psicologo';
 import { environment } from 'src/environments/environment';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { PsicologoEspecialidadDTO } from '../model/PsicologoEspecialidadDTO';
 
 const base_url = environment.base;
 
@@ -63,5 +64,19 @@ export class PsicologoService {
   setConfirmarEliminacion(estado:Boolean){
     this.confirmarEliminacion.next(estado)
   }
+
+  getEspecialidadByCountPsicologo(): Observable<PsicologoEspecialidadDTO[]> {
+    let token = sessionStorage.getItem("token");
+    return this.http.get<PsicologoEspecialidadDTO[]>(`${this.url}/especialidad-count`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+    
+  }
+  getcorreo(correo:string): Observable<Psicologo[]> {
+    let token = sessionStorage.getItem("token");
+    return this.http.post<Psicologo[]>(`${this.url}/buscar`, correo, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+   }
 }
 

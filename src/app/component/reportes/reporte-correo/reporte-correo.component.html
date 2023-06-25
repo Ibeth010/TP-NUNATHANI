@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div style="text-align: center;">
+      <h1>Busqueda de correo</h1>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Correos </mat-label>
+        <input matInput placeholder="Introduce correo" [(ngModel)]="correomandar">
+      </mat-form-field>
+
+      <button mat-button (click)="buscarPorCorreo()">Buscar</button>
+
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Id </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.idPsicologo}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="correo">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Nombre </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.correoPsicologo}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="usuario">
+        <th mat-header-cell *matHeaderCellDef> Usuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.usuario.nameusuario}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <div style="text-align: center;" class="example-button-row">
+        <button mat-raised-button color="warn" routerLink="/reportes">Volver a reportes</button>
+
+    </div>
+
+  </div>
+  
+
+</body>
+
+</html>
