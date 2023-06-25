@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="col-lg-12">
+      <h2>Recomendación video de youtube según descripción</h2>
+    </div>
+  </div>
+    <div class="col-lg-12">
+      <form [formGroup]="form" autocomplete="off"> <!--USAMOS UN FORM PARA REPRESENTAR LA DATA, PERO QUE ESTA NO SEA MANIPULABLE-->
+  
+        <div class="col-lg-12">
+          <mat-form-field class="example-container" [style.fontSize.px]="16" style="width: 500px;">
+            <h3>Nombre de la rutina:</h3>
+            <input matInput formControlName="nombre" class="long-input" readonly/> <!--"nombre" es el nombre de la rutina (está en el component.ts)-->
+          </mat-form-field>
+          <div
+            
+          >
+          </div>
+          <div
+          >
+          </div>
+        </div>
+  
+        <div class="col-lg-12">
+          <mat-form-field class="example-container" [style.fontSize.px]="16" style="width: 500px;">
+            <h3>Descripción:</h3>
+            <input #channelName matInput class="long-input" formControlName="descripcion" readonly/> <!--readOnly: solo para ver -->
+          </mat-form-field>
+          <div
+          >
+          </div>
+        </div>
+  
+        <div class="col-lg-12">
+          <mat-form-field class="example-container" [style.fontSize.px]="16">
+            <mat-label>Recomendación</mat-label>
+            <h3>Canal recomendado:</h3>
+            
+            <!-- <a target="_blank" href="https://www.youtube.com/channel/{{channels[0].id.channelId}}">
+              {{channels[0].id.channelId}}
+            </a> -->
+  
+            <button style="background-color: #9c88a3; font-family: 'Bellota',
+             sans-serif;color: #fff; padding: 10px 20px; border: none;
+             border-radius: 70px; font-size: 16px; cursor: pointer;
+             " (click)="redirectToChannel()">Ir al canal de YouTube</button> <!--Se crea una función redirectToChannel() para que tome acción cuando se toma el botón, nos ayudará a entrar al canal recomendado-->
+          </mat-form-field>
+          <div 
+          >
+          </div>
+        </div>
+  
+        <div class="col-12">
+          <button
+            class="btn btn-success btn-lg float-right"
+            [disabled]="form.invalid"
+            type="button"
+            style="background-color: black;margin-left: 10 px; font-family: 'Bellota', sans-serif,"
+            routerLink="/rutinas_recreativas"
+          >
+            Regresar a la lista
+          </button>
+        </div>
+      </form>
+    </div>
+  

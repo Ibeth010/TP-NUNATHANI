@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component,ElementRef, OnInit,ViewChild } from '@angular/core';
 import { Rutinas_recreativas } from 'src/app/model/rutinas_recreativas';
 import { Rutinas_recreativasService } from 'src/app/service/rutinas_recreativas.service';
 import { MatTableDataSource } from '@angular/material/table';
@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog'
 import { Rutinas_recreativasDialogoComponent } from './rutinas-recreativas-dialogo/rutinas-recreativas-dialogo.component';
 import { LoginService } from 'src/app/service/login.service';
 import { MatPaginator } from '@angular/material/paginator';
+import { YoutubeService } from 'src/app/service/services/youtube.service';
 
 @Component({
   selector: 'app-rutinas_recreativas-listar',
@@ -13,6 +14,11 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./rutinas_recreativas-listar.component.css'],
 })
 export class Rutinas_recreativasListarComponent implements OnInit {
+
+  channels:any
+
+  @ViewChild('channelName') channelName: ElementRef;
+  
   role:string="";
   dataSource: MatTableDataSource<Rutinas_recreativas> = new MatTableDataSource();
   lista: Rutinas_recreativas[] = [];
@@ -26,7 +32,8 @@ export class Rutinas_recreativasListarComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private rS: Rutinas_recreativasService, 
-    private dialog: MatDialog,  private ls:LoginService) {}
+    private dialog: MatDialog,  private ls:LoginService
+    , private youtube: YoutubeService) {}
 
   ngOnInit(): void {
     this.role=this.ls.showRole();

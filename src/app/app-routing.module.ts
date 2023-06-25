@@ -41,6 +41,7 @@ import { ReporteTestComponent } from './component/reportes/reporte-test/reporte-
 import { ReporteInformeComponent } from './component/reportes/reporte-informe/reporte-informe.component';
 import { ReporteFechaPacienteComponent } from './component/reportes/reporte-fecha-paciente/reporte-fecha-paciente.component';
 import { ReporteBuscarPacienteFechaComponent } from './component/reportes/reporte-buscar-paciente-fecha/reporte-buscar-paciente-fecha.component';
+import { AppRutinasRecreativasRecomendacionVistaComponent } from './component/rutinas_recreativas/rutinas_recreativas-listar/app-rutinas-recreativas-recomendacion-vista/app-rutinas-recreativas-recomendacion-vista.component';
 
 const routes: Routes = [
   {
@@ -114,6 +115,7 @@ const routes: Routes = [
     children: [
       {path: 'rutinas_recreativasinsertar', component: Rutinas_recreativasInsertarComponent},
       {path: 'edicion/:id', component: Rutinas_recreativasInsertarComponent},
+      {path: 'recomendación/:id/:nombre/:descripcion', component: AppRutinasRecreativasRecomendacionVistaComponent}, //PATH PARA VISTA DEL CANAL RECOMENDADO CONECTADO A LA API KEY DE YOUTUBE
     ],
   },
 
