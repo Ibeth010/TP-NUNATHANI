@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div style="text-align: center;">
+      <h1>Busqueda de fecha</h1>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha de nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="fechamandar">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <button mat-button (click)="buscarPorFecha()">Buscar</button>
+
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Id </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.idpaciente}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="correo">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Nombre </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.correopaciente}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="nacimiento">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Nacimiento </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.nacimientopaciente}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="usuario">
+        <th mat-header-cell *matHeaderCellDef> Usuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.usuario.nameusuario}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <div style="text-align: center;" class="example-button-row">
+      <button mat-raised-button color="warn" routerLink="/paciente">Volver a Paciente</button>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

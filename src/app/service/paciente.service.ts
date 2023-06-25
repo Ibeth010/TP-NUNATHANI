@@ -63,4 +63,10 @@ export class PacienteService {
     headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
   });
  }
+ getfechanacimiento(fecha:Date): Observable<Paciente[]> {
+  let token = sessionStorage.getItem("token");
+  return this.http.post<Paciente[]>(`${this.url}/buscar`, fecha, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+ }
 }

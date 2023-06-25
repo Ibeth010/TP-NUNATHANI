@@ -39,6 +39,7 @@ import { ReporteTratamientoComponent } from './component/reportes/reporte-tratam
 import { ReportefechasPacienteComponent } from './component/reportes/reportefechas-paciente/reportefechas-paciente.component';
 import { ReporteTestComponent } from './component/reportes/reporte-test/reporte-test.component';
 import { ReporteInformeComponent } from './component/reportes/reporte-informe/reporte-informe.component';
+import { ReporteFechaPacienteComponent } from './component/reportes/reporte-fecha-paciente/reporte-fecha-paciente.component';
 
 const routes: Routes = [
   {
@@ -172,6 +173,7 @@ const routes: Routes = [
       {path: 'nombre-fecha', component: ReportefechasPacienteComponent},
       {path: 'pregunta-test', component: ReporteTestComponent},
       {path: 'informe-tratamiento', component: ReporteInformeComponent},
+      {path: 'buscar-fecha', component: ReporteFechaPacienteComponent},
     ],
   },
 
