@@ -68,4 +68,10 @@ export class InformeService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
     });
 }
+getresultado(resultado:string): Observable<Informe[]> {
+  let token = sessionStorage.getItem("token");
+  return this.http.post<Informe[]>(`${this.url}/buscar`, resultado, {
+    headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+  });
+ }
 }

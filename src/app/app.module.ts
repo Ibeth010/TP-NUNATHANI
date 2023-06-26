@@ -86,6 +86,7 @@ import { ReportefechasPacienteComponent } from './component/reportes/reportefech
 import { ReporteTestComponent } from './component/reportes/reporte-test/reporte-test.component';
 import { ReporteInformeComponent } from './component/reportes/reporte-informe/reporte-informe.component';
 import { ReporteFechaPacienteComponent } from './component/reportes/reporte-fecha-paciente/reporte-fecha-paciente.component';
+import { ReporteResultadoComponent } from './component/reportes/reporte-resultado/reporte-resultado.component';
 
 @NgModule({
   declarations: [
@@ -160,6 +161,7 @@ import { ReporteFechaPacienteComponent } from './component/reportes/reporte-fech
     ReporteTestComponent,
     ReporteInformeComponent,
     ReporteFechaPacienteComponent,
+    ReporteResultadoComponent,
     
 
 
