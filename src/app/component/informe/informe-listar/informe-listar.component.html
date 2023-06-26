@@ -18,6 +18,9 @@
         <mat-form-field style="flex: 1; margin-right: 16px;">
           <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
         </mat-form-field>
+        <div style="text-align: right;" class="example-button-row" [hidden]="role=='PSICOLOGO'">
+          <button mat-raised-button color="warn" routerLink="/reportes/reporte-resultado">Busqueda por resultado</button>
+        </div>
         <div style="text-align: right;" class="example-button-row" [hidden]="role=='PACIENTE'">
         <button mat-raised-button color="black" routerLink="/informes/informesinsertar">Nuevo</button>
       </div>
