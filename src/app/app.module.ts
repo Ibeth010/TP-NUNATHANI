@@ -92,7 +92,6 @@ import { ReporteCorreoComponent } from './component/reportes/reporte-correo/repo
 import { ReporteEspecialidadComponent } from './component/reportes/reporte-especialidad/reporte-especialidad.component';
 import { ReporteTemaComponent } from './component/reportes/reporte-tema/reporte-tema.component';
 import { ReporteResultadoComponent } from './component/reportes/reporte-resultado/reporte-resultado.component';
-
 @NgModule({
   declarations: [
     AppComponent,
