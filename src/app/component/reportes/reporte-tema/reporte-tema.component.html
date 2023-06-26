@@ -11,33 +11,33 @@
 <body>
   <div class="container">
     <div style="text-align: center;">
-      <h1>Busqueda de correo</h1>
+      <h1>Busqueda de tema</h1>
 
       <mat-form-field appearance="fill">
-        <mat-label>Correos </mat-label>
-        <input matInput placeholder="Introduce correo" [(ngModel)]="correomandar">
+        <mat-label>Temas </mat-label>
+        <input matInput placeholder="Introduce el tema del Tratamiento" [(ngModel)]="temaenviar">
       </mat-form-field>
 
-      <button mat-button (click)="buscarPorCorreo()">Buscar</button>
+      <button mat-button (click)="buscarPorTema()">Buscar</button>
 
     </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Id </th>
-        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.idPsicologo}} </td>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.idTratamiento}} </td>
       </ng-container>
 
       <!-- Name Column -->
-      <ng-container matColumnDef="correo">
+      <ng-container matColumnDef="tema">
         <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Nombre </th>
-        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.correoPsicologo}} </td>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.temaTratamiento}} </td>
       </ng-container>
 
       <!-- Weight Column -->
-      <ng-container matColumnDef="usuario">
-        <th mat-header-cell *matHeaderCellDef> Usuario </th>
-        <td mat-cell *matCellDef="let element"> {{element.usuario.nameusuario}} </td>
+      <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+        <td mat-cell *matCellDef="let element"> {{element.descripcionTratamiento}} </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -45,7 +45,7 @@
     </table>
 
     <div style="text-align: center;" class="example-button-row">
-        <button mat-raised-button color="warn" routerLink="/psicologo">Volver a la Lista de Psicologos</button>
+        <button mat-raised-button color="warn" routerLink="/tratamientos">Volver a Lista de Tratamiento</button>
 
     </div>
 

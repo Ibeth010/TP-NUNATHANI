@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Tratamiento } from '../model/tratamiento';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -68,4 +67,11 @@ export class TratamientoService {
     });
     
   }
+
+  gettema(temaTratamiento:string): Observable<Tratamiento[]> {
+    let token = sessionStorage.getItem("token");
+    return this.http.post<Tratamiento[]>(`${this.url}/buscar`, temaTratamiento, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+   }
 }

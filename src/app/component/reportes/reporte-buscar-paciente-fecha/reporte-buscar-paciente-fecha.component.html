@@ -1,4 +1,4 @@
-<p>reporte-buscar-paciente-fecha works!</p>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +21,9 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
-      <button mat-button (click)="buscarPorFecha()">Buscar</button>
+      
+      <button mat-button (click)="buscarPorFecha()" style="background-color: black; color: white;">Buscar</button>
+
 
     </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -52,9 +54,13 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 
+
+    
     <div style="text-align: center;" class="example-button-row">
-      <button mat-raised-button color="warn" routerLink="/citas">Volver a Cita</button>
+      
+      <button mat-raised-button class="black-button" routerLink="/citas">Volver a Cita</button>
     </div>
+    
 
   </div>
 

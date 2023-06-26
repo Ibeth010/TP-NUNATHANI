@@ -90,6 +90,7 @@ import { ReporteBuscarPacienteFechaComponent } from './component/reportes/report
 import { AppRutinasRecreativasRecomendacionVistaComponent } from './component/rutinas_recreativas/rutinas_recreativas-listar/app-rutinas-recreativas-recomendacion-vista/app-rutinas-recreativas-recomendacion-vista.component';
 import { ReporteCorreoComponent } from './component/reportes/reporte-correo/reporte-correo.component';
 import { ReporteEspecialidadComponent } from './component/reportes/reporte-especialidad/reporte-especialidad.component';
+import { ReporteTemaComponent } from './component/reportes/reporte-tema/reporte-tema.component';
 
 @NgModule({
   declarations: [
@@ -168,6 +169,7 @@ import { ReporteEspecialidadComponent } from './component/reportes/reporte-espec
     AppRutinasRecreativasRecomendacionVistaComponent,
     ReporteCorreoComponent,
     ReporteEspecialidadComponent,
+    ReporteTemaComponent,
     
 
 

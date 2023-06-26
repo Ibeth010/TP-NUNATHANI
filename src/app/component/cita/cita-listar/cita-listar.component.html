@@ -20,6 +20,11 @@
         <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
       </mat-form-field>
 
+      <div style="text-align: right;" class="example-button-row" [hidden]="role=='PSICOLOGO'">
+        <button mat-raised-button color="warn" routerLink="/reportes/buscar-cita-fecha">Busqueda por fecha</button>
+
+      </div>
+
       <div style="text-align: right;" class="example-button-row">
       <button mat-raised-button color="black" routerLink="/citas/nuevo">Nuevo</button>
     </div>
