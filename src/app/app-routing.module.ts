@@ -40,15 +40,12 @@ import { ReportefechasPacienteComponent } from './component/reportes/reportefech
 import { ReporteTestComponent } from './component/reportes/reporte-test/reporte-test.component';
 import { ReporteInformeComponent } from './component/reportes/reporte-informe/reporte-informe.component';
 import { ReporteFechaPacienteComponent } from './component/reportes/reporte-fecha-paciente/reporte-fecha-paciente.component';
-<<<<<<< HEAD
 import { ReporteBuscarPacienteFechaComponent } from './component/reportes/reporte-buscar-paciente-fecha/reporte-buscar-paciente-fecha.component';
 import { AppRutinasRecreativasRecomendacionVistaComponent } from './component/rutinas_recreativas/rutinas_recreativas-listar/app-rutinas-recreativas-recomendacion-vista/app-rutinas-recreativas-recomendacion-vista.component';
 import { ReporteEspecialidadComponent } from './component/reportes/reporte-especialidad/reporte-especialidad.component';
 import { ReporteCorreoComponent } from './component/reportes/reporte-correo/reporte-correo.component';
 import { ReporteTemaComponent } from './component/reportes/reporte-tema/reporte-tema.component';
-=======
 import { ReporteResultadoComponent } from './component/reportes/reporte-resultado/reporte-resultado.component';
->>>>>>> hugo
 
 const routes: Routes = [
   {
@@ -184,14 +181,11 @@ const routes: Routes = [
       {path: 'pregunta-test', component: ReporteTestComponent},
       {path: 'informe-tratamiento', component: ReporteInformeComponent},
       {path: 'buscar-fecha', component: ReporteFechaPacienteComponent},
-<<<<<<< HEAD
       {path: 'buscar-cita-fecha', component: ReporteBuscarPacienteFechaComponent},
       {path: 'especialidad-psicologo', component: ReporteEspecialidadComponent},
       {path: 'reporte-correo', component: ReporteCorreoComponent},
       {path: 'reporte-tema', component:ReporteTemaComponent },
-=======
       {path: 'reporte-resultado', component:ReporteResultadoComponent },
->>>>>>> hugo
     ],
   },
 
